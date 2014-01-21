@@ -24,14 +24,14 @@
  *
  * Finally, all we have to do is to sum this formula over integers n < 100.
  *
- * @return {number}
+ * Result: 25164150
+ * Time: 14ms
  */
-function problem6()
-{
-  var difference = 0,
-      n;
 
-  for (n = 1; n <= 100; n++) difference += (n - 1) * n * n;
 
-  return difference; // --> 25164150
-}
+var difference = 0,
+    n;
+
+for (n = 1; n <= 100; n++) difference += (n - 1) * n * n;
+
+self.postMessage({type: 'result', result: 'Difference: ' + difference});

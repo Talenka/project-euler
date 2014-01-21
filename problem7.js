@@ -2,29 +2,31 @@
  * Return the 10001st prime number.
  *
  * Source: https://projecteuler.net/problem=7
- * @return {number}
+ *
+ * Result: 104743
+ * Time: 923ms
  */
-function problem7()
-{
-  var PrimesList = [2],
-      PrimesNumber = 1,
-      n = 2;
 
-  while (PrimesNumber < 10001) {
+var PrimesList = [2],
+    PrimesNumber = 1,
+    n = 2;
 
-    n++;
+while (PrimesNumber < 10001) {
 
-    // Find if n is divisible by one the first primes.
-    for (i = 0; i < PrimesNumber; i++) {
-      if (n % PrimesList[i] == 0) break;
-    }
+  n++;
 
-    // If not, n is prime
-    if (i == PrimesNumber) {
-      PrimesList.push(n);
-      PrimesNumber++;
-    }
+  // Find if n is divisible by one the first primes.
+  for (i = 0; i < PrimesNumber; i++) {
+    if (n % PrimesList[i] == 0) break;
   }
 
-  return n; // --> 104743
+  // If not, n is prime
+  if (i == PrimesNumber) {
+    PrimesList.push(n);
+    PrimesNumber++;
+
+    self.postMessage({type: 'progress', current: PrimesNumber, max: 10001});
+  }
 }
+
+self.postMessage({type: 'result', result: '10001st prime: ' + n});

@@ -3,36 +3,33 @@
  * N = 600851475143.
  *
  * Source: https://projecteuler.net/problem=10
+ *
+ * Result: 142913828922
+ * Time: 230s
  */
 
-var Primes = [2];
-var PrimesSum = 2;
-var N = 1;
-var CurrentNumber = 3;
-var MaxStep = 1000;
+var Primes = [2],
+    PrimesSum = 2,
+    PrimesNumber = 1,
+    Max = 2000000;
 
-function problem10(Max) // Max = 2000000
-{
-  var i, j, cMax = Math.min(Max, CurrentNumber + MaxStep);
 
-  for (i = CurrentNumber; i < cMax; i += 2) {
+var i, j;
 
-    for (j = 0; j < N; j++) {
-      if (i % Primes[j] == 0) break;
-    }
+for (i = 3; i < Max; i += 2) {
 
-    // If i is not divisible by any previous primes, it's prime
-    if (j == N) {
-      Primes.push(i);
-      PrimesSum += i;
-      N++;
-    }
+  for (j = 0; j < PrimesNumber; j++) {
+    if (i % Primes[j] == 0) break;
   }
 
-  CurrentNumber = i;
+  // If i is not divisible by any previous primes, it's prime
+  if (j == PrimesNumber) {
+    Primes.push(i);
+    PrimesSum += i;
+    PrimesNumber++;
 
-  document.title = CurrentNumber + ' / ' + Max;
-  document.getElementById('result').value = PrimesSum;
-
-  if (CurrentNumber < Max) window.setTimeout('problem10(' + Max + ')', 10);
+    self.postMessage({type: 'progress', current: i, max: Max});
+  }
 }
+
+self.postMessage({type: 'result', result: 'Primes sum: ' + PrimesSum});

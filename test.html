@@ -2,14 +2,54 @@
 <html>
 <meta charset=utf-8>
 <title>Project Euler - Test</title>
-<script src="problem12.js"></script>
 <script>
+  
+var slave, timeStart, timeEnd, laps;
 
 function main()
 {
-  document.getElementById('result').innerHTML = problem12();
+  timeStart = (new Date()).valueOf();
+
+  slave = new Worker('problem13.js');
+
+  slave.postMessage('');
+
+  slave.addEventListener('message', function (e) {
+
+    timeEnd = (new Date()).valueOf();
+
+    laps =  (timeEnd - timeStart)/1000 + 's';
+
+    if (e.data.type == 'result')
+      displayResult(e.data.result);
+
+    if (e.data.type == 'progress')
+      displayProgress(e.data.current, e.data.max, e.data.info);
+
+  }, false);
+
+}
+
+
+function displayResult(result)
+{
+  document.getElementById('progress').value = 1;
+  document.getElementById('progress').max = 1;
+  document.getElementById('progressLabel').innerHTML = '[' + laps + '] ' + result;
+}
+
+
+function displayProgress(current, max, info)
+{
+  document.getElementById('progress').value = current;
+  document.getElementById('progress').max = max;
+  document.getElementById('progressLabel').innerHTML = '[' + laps + '] ' + current + ' / ' + max + ' (' + info + ')';
 }
 
 </script>
-<body onload="main()" id=result></body>
+<body onLoad="main()">
+  <progress id="progress" max="1" value="0"></progress>
+  <div id="progressLabel"></div>
+  <div id="result"></div>
+</body>
 </html>

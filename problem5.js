@@ -5,17 +5,17 @@
  *
  * In fact, this is just the least common multiple of 1, 2, 3, ..., 20.
  *
- * @return {number}
+ * Result: 232792560
+ * Time: 18ms
  */
-function problem5()
-{
-  var N = 1,
-      n;
 
-  for (n = 2; n < 20; n++) N = leastCommonMultiple(N, n);
+var N = 1,
+    n;
 
-  return N; // --> 232792560
-}
+for (n = 2; n < 20; n++) N = leastCommonMultiple(N, n);
+
+self.postMessage({type: 'result',
+                  result: 'Least common multiple: ' + N});
 
 
 /**
