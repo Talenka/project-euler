@@ -16,6 +16,11 @@
  * Time: 87ms
  */
 
+
+/**
+ * @param {number} n
+ * @return {string}
+ */
 function numberName(n)
 {
   if (n == 1000) {
