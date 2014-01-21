@@ -79,6 +79,5 @@ for (i = 1; i <= 1000; i++) {
   totalLettersNumbers += numberName(i).length;
 }
 
-self.postMessage({type: 'result', result: 'Letters number: ' + totalLettersNumbers});
 self.postMessage({type: 'result',
                   result: 'Letters number: ' + totalLettersNumbers});
