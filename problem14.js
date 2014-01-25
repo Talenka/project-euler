@@ -7,13 +7,10 @@
  * Which starting number i < 1000000, produces the longest chain?
  *
  * Strategy: brute force
- *
  * Source : https://projecteuler.net/problem=14
- *
  * Result: 837799 (525-long chain)
  * Time: 2.46s
  */
-
 
 /**
  * @param {number} n
@@ -32,13 +29,16 @@ function chainLength(n)
   return chain;
 }
 
+/** @type {number} */
+var longestChain = 1;
 
-var i, longestChain = 1, longestChainStart, chain;
+/** @type {number} */
+var longestChainStart;
 
-for (i = 1; i < 1000000; i++) {
+/** @type {number} */
+var chain;
 
-  if (i % 100 == 0)
-    self.postMessage({type: 'progress', current: i, max: 1000000});
+for (var i = 1; i < 1000000; i++) {
 
   chain = chainLength(i);
 
@@ -48,5 +48,4 @@ for (i = 1; i < 1000000; i++) {
   }
 }
 
-self.postMessage({type: 'result',
-                  result: 'Longest chain start: ' + longestChainStart});
+self.postMessage('Longest chain start: ' + longestChainStart, []);

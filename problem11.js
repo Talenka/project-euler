@@ -2,14 +2,17 @@
  * Return the largest product of 4 adjacent elements of a
  * 20x20 grid (horizontally, vertically, and diagonally).
  *
+ * Strategy: brute force
  * Source: https://projecteuler.net/problem=11
- *
  * Result: 70600674
- * Time: 18ms
+ * Time: 17ms
  */
 
 
-// The Grid
+/**
+ * The Grid
+ * @type {Array.<Array.<number>>}
+ */
 var G = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
          [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
          [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65],
@@ -31,13 +34,16 @@ var G = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8
          [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
          [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]];
 
-// The maximal product
+/**
+ * The maximal product
+ * @type {number}
+ */
 var M = 0;
 
-for (i = 0; i < 20; i++) {
-  self.postMessage({type: 'progress', current: i, max: 20});
+for (var i = 0; i < 20; i++) {
+  // self.postMessage({type: 'progress', current: i, max: 20});
 
-  for (j = 0; j < 20; j++) {
+  for (var j = 0; j < 20; j++) {
 
     if (i < 16)
       M = Math.max(M, G[i][j] * G[i + 1][j] * G[i + 2][j] * G[i + 3][j]);
@@ -53,4 +59,4 @@ for (i = 0; i < 20; i++) {
   }
 }
 
-self.postMessage({type: 'result', result: 'Maximal product: ' + M});
+self.postMessage('Maximal product: ' + M, []);

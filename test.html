@@ -10,7 +10,7 @@ function main()
 {
   timeStart = (new Date()).valueOf();
 
-  slave = new Worker('problem19.js');
+  slave = new Worker('output.js');
 
   slave.postMessage('');
 
@@ -18,38 +18,14 @@ function main()
 
     timeEnd = (new Date()).valueOf();
 
-    laps =  (timeEnd - timeStart)/1000 + 's';
+    laps = (timeEnd - timeStart)/1000 + 's';
 
-    if (e.data.type == 'result')
-      displayResult(e.data.result);
-
-    if (e.data.type == 'progress')
-      displayProgress(e.data.current, e.data.max, e.data.info);
+    document.body.innerHTML = '[' + laps + '] ' + e.data;
 
   }, false);
-
-}
-
-
-function displayResult(result)
-{
-  document.getElementById('progress').value = 1;
-  document.getElementById('progress').max = 1;
-  document.getElementById('progressLabel').innerHTML = '[' + laps + '] ' + result;
-}
-
-
-function displayProgress(current, max, info)
-{
-  document.getElementById('progress').value = current;
-  document.getElementById('progress').max = max;
-  document.getElementById('progressLabel').innerHTML = '[' + laps + '] ' + current + ' / ' + max + ' (' + info + ')';
 }
 
 </script>
 <body onLoad="main()">
-  <progress id="progress" max="1" value="0"></progress>
-  <div id="progressLabel"></div>
-  <div id="result"></div>
 </body>
 </html>
