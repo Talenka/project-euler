@@ -16,7 +16,7 @@
  *
  * Source : https://projecteuler.net/problem=19
  * Result : 171
- * Time: 2.2s
+ * Time: 19ms
  */
 
 
@@ -42,23 +42,23 @@ function isLeapYear(y)
   return (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0)) ? true : false;
 }
 
-var current = [1900, 1 , 1],
-    start = [1901, 1, 1],
-    end = [2000, 12, 31],
-    sundaysFirst = 0,
-    dayOfTheWeek = 1,
-    year, month, day;
+var current = [1900, 1 , 1];
+
+var start = [1901, 1, 1];
+
+var end = [2000, 12, 31];
+
+var sundaysFirst = 0;
+
+var dayOfTheWeek = 1;
+
+var year, month, day;
 
 while (current[0] < end[0] || current[1] < end[1] || current[2] < end[2]) {
 
   year = current[0];
   month = current[1];
   day = current[2];
-
-  self.postMessage({type: 'progress',
-                    current: year,
-                    max: end[0],
-                    info: sundaysFirst});
 
   if (dayOfTheWeek % 7 == 0 &&
       day == 1 &&
@@ -72,15 +72,12 @@ while (current[0] < end[0] || current[1] < end[1] || current[2] < end[2]) {
 
   if (day == monthLength(month, year)) {
 
-    if (month == 12) {
+    if (month == 12) current = [year + 1, 1, 1];
 
-      current = [year + 1, 1, 1];
-
-    } else current = [year, month + 1, 1];
+    else current = [year, month + 1, 1];
 
   } else current = [year, month, day + 1];
 
 }
 
-self.postMessage({type: 'result',
-                  result: 'Sundays first of a month: ' + sundaysFirst});
+self.postMessage('Sundays first of a month: ' + sundaysFirst, []);
