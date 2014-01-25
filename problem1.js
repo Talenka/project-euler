@@ -8,10 +8,13 @@
  */
 
 
-var n, sum = 0;
+var n = 3;
+var sum = 0;
 
-for (n = 3; n < 1000; n++) {
+while (n < 1000) {
   if (n % 3 == 0 || n % 5 == 0) sum += n;
+
+  n++;
 }
 
-self.postMessage({type: 'result', result: 'Sum: ' + sum});
+self.postMessage('Sum: ' + sum, []);
