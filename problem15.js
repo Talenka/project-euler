@@ -10,14 +10,16 @@
  * Here this is just (2N)! / (N!)^2
  *
  * Source : https://projecteuler.net/problem=15
- *
  * Result: 137846528820
- * Time: 18ms
+ * Time: 12ms
  */
 
-var routesNumber = 1, N = 20;
+/** @type {number} */
+var routesNumber = 1;
 
-for (i = 1; i <= N; i++) routesNumber *= (N + i) / i;
+/** @type {number} */
+var N = 20;
 
-self.postMessage({type: 'result',
-                  result: 'Routes number: ' + routesNumber});
+for (var i = 1; i <= N; i++) routesNumber *= (N + i) / i;
+
+self.postMessage('Routes number: ' + routesNumber, []);
