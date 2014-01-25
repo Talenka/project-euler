@@ -13,9 +13,8 @@
  * Source : https://projecteuler.net/problem=17
  *
  * Result: 21124
- * Time: 87ms
+ * Time: 14ms
  */
-
 
 /**
  * @param {number} n
@@ -39,8 +38,11 @@ function numberName(n)
   } else return numberNames[n];
 }
 
-var totalLettersNumbers = 0,
-    numberNames = ['zero',
+/** @type {number} */
+var totalLettersNumbers = 0;
+
+/** @type {Array.<string>} */
+var numberNames = ['zero',
                    'one',
                    'two',
                    'three',
@@ -59,8 +61,10 @@ var totalLettersNumbers = 0,
                    'sixteen',
                    'seventeen',
                    'eighteen',
-                   'nineteen'],
-    tensNumberNames = ['zero',
+                   'nineteen'];
+
+/** @type {Array.<string>} */
+var tensNumberNames = ['zero',
                        'ten',
                        'twenty',
                        'thirty',
@@ -72,12 +76,6 @@ var totalLettersNumbers = 0,
                        'ninety'];
 
 
-for (i = 1; i <= 1000; i++) {
+for (var i = 1; i <= 1000; i++) totalLettersNumbers += numberName(i).length;
 
-  self.postMessage({type: 'progress', current: i, max: 5});
-
-  totalLettersNumbers += numberName(i).length;
-}
-
-self.postMessage({type: 'result',
-                  result: 'Letters number: ' + totalLettersNumbers});
+self.postMessage('Letters number: ' + totalLettersNumbers, []);
