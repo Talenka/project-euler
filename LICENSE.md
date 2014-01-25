@@ -1,1 +1,1 @@
-Published under [GNU General Public License (GPL)](http://www.gnu.org/licenses/gpl.html) by [Boudah Talenka](http://boudah.pl)
+Published under [GNU General Public License (GPL)](https://gnu.org/licenses/gpl) by [Boudah Talenka](http://boudah.pl)
