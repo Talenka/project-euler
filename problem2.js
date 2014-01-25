@@ -8,7 +8,17 @@
  */
 
 
-var previousTerm = 1, currentTerm = 2, nextTerm, sum = 0;
+/** @type {number} */
+var previousTerm = 1;
+
+/** @type {number} */
+var currentTerm = 2;
+
+/** @type {number} */
+var nextTerm;
+
+/** @type {number} */
+var sum = 0;
 
 while (currentTerm < 4000000) {
 
@@ -19,4 +29,4 @@ while (currentTerm < 4000000) {
   currentTerm = nextTerm;
 }
 
-self.postMessage({type: 'result', result: 'Sum: ' + sum});
+self.postMessage('Sum: ' + sum, []);
