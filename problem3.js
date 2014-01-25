@@ -1,28 +1,39 @@
 /**
  * Return the largest prime factor of N = 600851475143.
  *
- * TODO : too much recursion
- *
+ * Strategy: progressive reduction
  * Source: https://projecteuler.net/problem=3
- *
  * Result: 6857
- * Time: 32ms
+ * Time: 13ms
  */
 
-var N = 600851475143, Max = Math.sqrt(N), n, largestFactor = 1;
+
+/** @type {number} */
+var N = 600851475143;
+
+/** @type {number} Maximal theoretical factor. */
+var Max = Math.sqrt(N);
+
+/** @type {number} */
+var n;
+
+/** @type {number} */
+var largestFactor = 1;
 
 for (n = 2; n <= Max; n++) {
 
   if (N % n == 0) {
 
-    self.postMessage({type: 'progress', current: n, max: Max});
-
     largestFactor = Math.max(largestFactor, n);
+
     N /= n;
+
+    Max = Math.sqrt(N);
+
     n = 2;
   }
 }
 
-self.postMessage({type: 'progress', current: n, max: Max});
+largestFactor = Math.max(largestFactor, N);
 
-self.postMessage({type: 'result', result: 'Largest factor: ' + largestFactor});
+self.postMessage('Largest factor: ' + largestFactor, []);
