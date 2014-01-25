@@ -28,9 +28,10 @@
  *                04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
  *
  * Result : 1074
- * Time: 17ms
+ * Time: 13ms
  */
 
+/** @type {Array.<Array.<number>>} */
 var triangle = [[75],
                 [95, 64],
                 [17, 47, 82],
@@ -48,6 +49,11 @@ var triangle = [[75],
                 [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]];
 
 
+/**
+ * @param {number} level
+ * @param {number} index
+ * @return {number}
+ */
 function bestRoute(level, index)
 {
   if (level < triangle.length - 1) {
@@ -58,4 +64,4 @@ function bestRoute(level, index)
   } else return triangle[level][index];
 }
 
-self.postMessage({type: 'result', result: 'Best route: ' + bestRoute(0, 0)});
+self.postMessage('Best route: ' + bestRoute(0, 0), []);
