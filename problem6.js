@@ -2,8 +2,7 @@
  * Return the difference between the square of the sum of integers n < 100,
  * A(n), and the sum of squared integers, B(n).
  *
- * Source: https://projecteuler.net/problem=6
- *
+ * Strategy: litteral simplification
  * A(n) = 1 + 4 + 9 + ... + n^2
  * B(n) = (1 + 2 + 3 + ... + n)^2
  *
@@ -24,14 +23,15 @@
  *
  * Finally, all we have to do is to sum this formula over integers n < 100.
  *
+ * Source: https://projecteuler.net/problem=6
  * Result: 25164150
  * Time: 14ms
  */
 
 
-var difference = 0,
-    n;
+/** @type {number} */
+var difference = 0;
 
-for (n = 1; n <= 100; n++) difference += (n - 1) * n * n;
+for (var n = 1; n <= 100; n++) difference += (n - 1) * n * n;
 
-self.postMessage({type: 'result', result: 'Difference: ' + difference});
+self.postMessage('Difference: ' + difference, []);

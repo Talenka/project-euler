@@ -1,12 +1,13 @@
 /**
  * Return the largest product of 5 consecutive digits in a serie of 1000.
  *
+ * Strategy: brute force
  * Source: https://projecteuler.net/problem=8
- *
  * Result: 40824
- * Time: 19ms
+ * Time: 12ms
  */
 
+/** @type {string} */
 var serie = '73167176531330624919225119674426574742355349194934' +
             '96983520312774506326239578318016984801869478851843' +
             '85861560789112949495459501737958331952853208805511' +
@@ -26,11 +27,13 @@ var serie = '73167176531330624919225119674426574742355349194934' +
             '07198403850962455444362981230987879927244284909188' +
             '84580156166097919133875499200524063689912560717606' +
             '05886116467109405077541002256983155200055935729725' +
-            '71636269561882670428252483600823257530420752963450',
-    maxProduct = 0;
+            '71636269561882670428252483600823257530420752963450';
 
-for (i = 0; i < serie.length - 5; i++)
+/** @type {number} */
+var maxProduct = 0;
+
+for (var i = 0; i < serie.length - 5; i++)
   maxProduct = Math.max(maxProduct, serie[i] * serie[i + 1] * serie[i + 2] *
                         serie[i + 3] * serie[i + 4]);
 
-self.postMessage({type: 'result', result: 'Max product: ' + maxProduct});
+self.postMessage('Max product: ' + maxProduct, []);

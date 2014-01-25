@@ -8,7 +8,7 @@
  *
  * In fact this is a rectangle triangle whose sides dimensions are integers.
  *
- * Here we are looking for the product a * b * c of the special pythagorean 
+ * Here we are looking for the product a * b * c of the special pythagorean
  * triplet that satisfy :
  *
  * [2]    a + b + c = 1000
@@ -27,29 +27,22 @@
  * Plus, we have sympathetic upper bounds: a < 500 and b < 500.
  *
  * Source: https://projecteuler.net/problem=9
- *
  * Result: 31875000 (a = 200; b = 375, c = 425)
- * Time: 25ms
+ * Time: 15ms
  */
 
+/** @type {number} */
+var c;
 
-var a, b, c;
-
-for (a = 1; a < 500; a++) {
-
-  self.postMessage({type: 'progress', current: a, max: 500});
-
-  for (b = a + 1; b < 500; b++) {
+for (var a = 1; a < 500; a++) {
+  for (var b = a + 1; b < 500; b++) {
 
     c = 1000 - a - b;
 
     if (a * a + b * b == c * c) {
-      self.postMessage({type: 'result', result: 'The product: ' + a * b * c});
-      b = 500;
-      a = 500;
-      break;
+      self.postMessage('The product: ' + a * b * c, []);
+
+      self.close();
     }
   }
-
-  
 }

@@ -1,22 +1,22 @@
 /**
  * Return the 10001st prime number.
  *
+ * Strategy: brute force
  * Source: https://projecteuler.net/problem=7
- *
  * Result: 104743
- * Time: 923ms
+ * Time: 905ms
  */
 
-var PrimesList = [2],
-    PrimesNumber = 1,
-    n = 2;
+/** @type {Array.<number>} */
+var PrimesList = [2];
 
-while (PrimesNumber < 10001) {
+/** @type {number} */
+var PrimesNumber = 1;
 
-  n++;
+for (var n = 3; PrimesNumber < 10001; n += 2) {
 
   // Find if n is divisible by one the first primes.
-  for (i = 0; i < PrimesNumber; i++) {
+  for (var i = 0; i < PrimesNumber; i++) {
     if (n % PrimesList[i] == 0) break;
   }
 
@@ -24,9 +24,7 @@ while (PrimesNumber < 10001) {
   if (i == PrimesNumber) {
     PrimesList.push(n);
     PrimesNumber++;
-
-    self.postMessage({type: 'progress', current: PrimesNumber, max: 10001});
   }
 }
 
-self.postMessage({type: 'result', result: '10001st prime: ' + n});
+self.postMessage('10001st prime: ' + (n - 2), []);

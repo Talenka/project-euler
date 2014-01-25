@@ -1,21 +1,21 @@
 /**
  * Return the smallest integer N evenly divisible by all integers n < 20.
  *
+ * Strategy: In fact, this is just the least common multiple of 1, 2, ..., 20.
  * Source: https://projecteuler.net/problem=5
- *
- * In fact, this is just the least common multiple of 1, 2, 3, ..., 20.
- *
  * Result: 232792560
  * Time: 18ms
  */
 
-var N = 1,
-    n;
+/** @type {number} */
+var N = 1;
+
+/** @type {number} */
+var n;
 
 for (n = 2; n < 20; n++) N = leastCommonMultiple(N, n);
 
-self.postMessage({type: 'result',
-                  result: 'Least common multiple: ' + N});
+self.postMessage('Least common multiple: ' + N, []);
 
 
 /**
