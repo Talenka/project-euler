@@ -2,16 +2,14 @@
  * Return the largest Palindrom number which is the product of two 3-digits
  * numbers, i.e. from 100 to 999.
  *
+ * Strategy: brute force
  * Source: https://projecteuler.net/problem=4
- *
  * Result: 906609
- * Time: 71ms
+ * Time: 66ms
  */
 
-
-var a,
-    b,
-    largestPalindrom = 0;
+/** @type {number} */
+var largestPalindrom = 0;
 
 /**
  * @param {number} n
@@ -19,16 +17,18 @@ var a,
  */
 function isPalindrom(n)
 {
-  n = n + ''; // stringify n
+  /** @type {string} */
+  var s = n.toString();
 
-  return (n[0] == n[5] && n[1] == n[4] && n[2] == n[3]);
+  return (s[0] == s[5] && s[1] == s[4] && s[2] == s[3]);
 }
 
+/** @type {number} */
+var b;
 
-for (a = 999; a > 100; a--)
+for (var a = 999; a > 100; a--)
   for (b = a; b > 100; b--)
     if (isPalindrom(a * b))
       largestPalindrom = Math.max(largestPalindrom, a * b);
 
-self.postMessage({type: 'result',
-                  result: 'Largest palindrom: ' + largestPalindrom});
+self.postMessage('Largest palindrom: ' + largestPalindrom, []);
