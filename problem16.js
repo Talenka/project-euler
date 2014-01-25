@@ -2,21 +2,22 @@
  * What is the sum of the digits of the number 2^1000?
  *
  * Source : https://projecteuler.net/problem=16
- *
  * Result: 1366
  * Time: 18ms
  */
 
-var digits = [1],
-    i,
-    digitsSum = 0,
-    ind = false;
+/** @type {Array.<number>} */
+var digits = [1];
 
-for (i = 1; i <= 1000; i++) {
+/** @type {number} */
+var digitsSum = 0;
 
-  self.postMessage({type: 'progress', current: i, max: 15});
+/** @type {boolean} ind means increment next digits */
+var ind = false;
 
-  for (d = 0, dl = digits.length; d < dl; d++) {
+for (var i = 1; i <= 1000; i++) {
+
+  for (var d = 0, dl = digits.length; d < dl; d++) {
 
     digits[d] *= 2;
 
@@ -38,4 +39,4 @@ for (i = 1; i <= 1000; i++) {
 
 for (d = 0, dl = digits.length; d < dl; d++) digitsSum += digits[d];
 
-self.postMessage({type: 'result', result: 'Digits sum: ' + digitsSum});
+self.postMessage('Digits sum: ' + digitsSum, []);
