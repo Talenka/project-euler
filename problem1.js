@@ -6,15 +6,19 @@
  * Result: 233168
  * Time: 12ms
  */
+'use strict';
 
 
-var n = 3;
-var sum = 0;
+/** @type {number} Current integer (integers below 3 are not 3 or 5 multiple) */
+let n = 3;
+
+/** @type {number} Sum of integers lower than current n */
+let sum = 0;
 
 while (n < 1000) {
-  if (n % 3 == 0 || n % 5 == 0) sum += n;
+  if (n % 3 === 0 || n % 5 === 0) sum += n;
 
   n++;
 }
 
-self.postMessage('Sum: ' + sum, []);
+self.postMessage({type: 'result', result: 'Sum: ' + sum}, []);
