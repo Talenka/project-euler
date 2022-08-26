@@ -6,23 +6,24 @@
  * Result: 4613732
  * Time: 12ms
  */
+'use strict';
 
 
 /** @type {number} */
-var previousTerm = 1;
+let previousTerm = 1;
 
 /** @type {number} */
-var currentTerm = 2;
+let currentTerm = 2;
 
 /** @type {number} */
-var nextTerm;
+let nextTerm;
 
 /** @type {number} */
-var sum = 0;
+let sum = 0;
 
 while (currentTerm < 4000000) {
 
-  if (currentTerm % 2 == 0) sum += currentTerm;
+  if (currentTerm % 2 === 0) sum += currentTerm;
 
   nextTerm = currentTerm + previousTerm;
   previousTerm = currentTerm;
