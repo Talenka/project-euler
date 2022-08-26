@@ -6,7 +6,7 @@
  * Result: 40824
  * Time: 12ms
  */
-'strict mode';
+'use strict';
 
 /** @type {string} */
 let serie = '73167176531330624919225119674426574742355349194934' +
