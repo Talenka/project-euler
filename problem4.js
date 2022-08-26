@@ -9,8 +9,6 @@
  */
 'use strict';
 
-/** @type {number} */
-let largestPalindrom = 0;
 
 /**
  * @param {number} n
@@ -19,17 +17,28 @@ let largestPalindrom = 0;
 function isPalindrom(n)
 {
   /** @type {string} */
-  let s = n.toString();
+  const s = n.toString();
 
   return (s[0] === s[5] && s[1] === s[4] && s[2] === s[3]);
 }
 
-for (let a = 999; a > 100; a--) {
-  for (let b = a; b > 100; b--) {
-    if (isPalindrom(a * b)) {
-      largestPalindrom = Math.max(largestPalindrom, a * b);
+
+/**
+ * @return {number}
+ */
+function productLargestPalindrom()
+{
+  /** @type {number} */
+  let largestPalindrom = 0;
+
+  for (let a = 999; a > 100; a--) {
+    for (let b = a; b > 100; b--) {
+      if (isPalindrom(a * b)) {
+        largestPalindrom = Math.max(largestPalindrom, a * b);
+      }
     }
   }
-}
 
-self.postMessage('Largest palindrom: ' + largestPalindrom, []);
+  if (console) console.log(largestPalindrom);
+  return largestPalindrom;
+}
