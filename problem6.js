@@ -27,11 +27,21 @@
  * Result: 25164150
  * Time: 14ms
  */
+'use strict';
 
 
-/** @type {number} */
-var difference = 0;
+/**
+ * @return {number}
+ */
+function squaresSumDifference()
+{
+  /** @type {number} */
+  let difference = 0;
 
-for (var n = 1; n <= 100; n++) difference += (n - 1) * n * n;
+  for (let n = 1; n <= 100; n++) {
+    difference += (n - 1) * n * n;
+  }
 
-self.postMessage('Difference: ' + difference, []);
+  if (console) console.log(difference);
+  return difference;
+}
