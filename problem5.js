@@ -6,16 +6,30 @@
  * Result: 232792560
  * Time: 18ms
  */
+'use strict';
 
-/** @type {number} */
-var N = 1;
 
-/** @type {number} */
-var n;
+/**
+ * See https://en.wikipedia.org/wiki/Greatest_common_divisor
+ * Section #Using_Euclid.27s_algorithm
+ *
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ */
+function greatestCommonDivisor(a, b)
+{
+  let c;
 
-for (n = 2; n < 20; n++) N = leastCommonMultiple(N, n);
+  if (b > a) {
+    c = b;
+    b = a;
+    a = c;
+  }
 
-self.postMessage('Least common multiple: ' + N, []);
+  if (a % b === 0) return b;
+  return greatestCommonDivisor(b, a % b);
+}
 
 
 /**
@@ -33,23 +47,17 @@ function leastCommonMultiple(a, b)
 
 
 /**
- * See https://en.wikipedia.org/wiki/Greatest_common_divisor
- * Section #Using_Euclid.27s_algorithm
- *
- * @param {number} a
- * @param {number} b
  * @return {number}
  */
-function greatestCommonDivisor(a, b)
+function smallestEvenlyDivisibleInteger()
 {
-  var c;
+  /** @type {number} */
+  let N = 1;
 
-  if (b > a) {
-    c = b;
-    b = a;
-    a = c;
+  for (let n = 2; n < 20; n++) {
+    N = leastCommonMultiple(N, n);
   }
 
-  if (a % b == 0) return b;
-  else return greatestCommonDivisor(b, a % b);
+  if (console) console.log(N);
+  return N;
 }
