@@ -6,25 +6,35 @@
  * Result: 104743
  * Time: 905ms
  */
+'use strict';
 
-/** @type {Array.<number>} */
-var PrimesList = [2];
 
-/** @type {number} */
-var PrimesNumber = 1;
+/**
+ * @return {number}
+ */
+function nthPrime()
+{
+  /** @type {Array.<number>} */
+  let PrimesList = [2];
 
-for (var n = 3; PrimesNumber < 10001; n += 2) {
+  /** @type {number} */
+  let PrimesNumber = 1;
 
-  // Find if n is divisible by one the first primes.
-  for (var i = 0; i < PrimesNumber; i++) {
-    if (n % PrimesList[i] == 0) break;
+  for (let n = 3; PrimesNumber < 10001; n += 2) {
+
+    // Find if n is divisible by one the first primes.
+    for (let i = 0; i < PrimesNumber; i++) {
+      if (n % PrimesList[i] === 0) break;
+    }
+
+    // If not, n is prime
+    if (i === PrimesNumber) {
+      PrimesList.push(n);
+      PrimesNumber++;
+    }
   }
 
-  // If not, n is prime
-  if (i == PrimesNumber) {
-    PrimesList.push(n);
-    PrimesNumber++;
-  }
+  // Given the n+=2 loop outcome, n-th prime is actually n - 2
+  if (console) console.log(n - 2);
+  return n - 2;
 }
-
-self.postMessage('10001st prime: ' + (n - 2), []);
