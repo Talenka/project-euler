@@ -30,19 +30,27 @@
  * Result: 31875000 (a = 200; b = 375, c = 425)
  * Time: 15ms
  */
+'use strict';
 
-/** @type {number} */
-var c;
 
-for (var a = 1; a < 500; a++) {
-  for (var b = a + 1; b < 500; b++) {
+/**
+ * @return {number}
+ */ 
+function pythagoreanTripletProduct()
+{
+  /** @type {number} */
+  let c;
 
-    c = 1000 - a - b;
+  for (let a = 1; a < 500; a++) {
+    for (let b = a + 1; b < 500; b++) {
+      c = 1000 - a - b;
 
-    if (a * a + b * b == c * c) {
-      self.postMessage('The product: ' + a * b * c, []);
-
-      self.close();
+      if (a * a + b * b === c * c) {
+        if (console) console.log('The product: ' + a * b * c);
+        return a * b * c;
+      }
     }
   }
+  
+  return 0;
 }
