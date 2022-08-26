@@ -7,9 +7,10 @@
  * Result: 906609
  * Time: 66ms
  */
+'use strict';
 
 /** @type {number} */
-var largestPalindrom = 0;
+let largestPalindrom = 0;
 
 /**
  * @param {number} n
@@ -18,17 +19,17 @@ var largestPalindrom = 0;
 function isPalindrom(n)
 {
   /** @type {string} */
-  var s = n.toString();
+  let s = n.toString();
 
-  return (s[0] == s[5] && s[1] == s[4] && s[2] == s[3]);
+  return (s[0] === s[5] && s[1] === s[4] && s[2] === s[3]);
 }
 
-/** @type {number} */
-var b;
-
-for (var a = 999; a > 100; a--)
-  for (b = a; b > 100; b--)
-    if (isPalindrom(a * b))
+for (let a = 999; a > 100; a--) {
+  for (let b = a; b > 100; b--) {
+    if (isPalindrom(a * b)) {
       largestPalindrom = Math.max(largestPalindrom, a * b);
+    }
+  }
+}
 
 self.postMessage('Largest palindrom: ' + largestPalindrom, []);
