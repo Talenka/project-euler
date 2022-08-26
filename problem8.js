@@ -6,9 +6,10 @@
  * Result: 40824
  * Time: 12ms
  */
+'strict mode';
 
 /** @type {string} */
-var serie = '73167176531330624919225119674426574742355349194934' +
+let serie = '73167176531330624919225119674426574742355349194934' +
             '96983520312774506326239578318016984801869478851843' +
             '85861560789112949495459501737958331952853208805511' +
             '12540698747158523863050715693290963295227443043557' +
@@ -30,10 +31,11 @@ var serie = '73167176531330624919225119674426574742355349194934' +
             '71636269561882670428252483600823257530420752963450';
 
 /** @type {number} */
-var maxProduct = 0;
+let maxProduct = 0;
 
-for (var i = 0; i < serie.length - 5; i++)
+for (let i = 0, end = serie.length - 5; i < end; i++) {
   maxProduct = Math.max(maxProduct, serie[i] * serie[i + 1] * serie[i + 2] *
                         serie[i + 3] * serie[i + 4]);
+}
 
-self.postMessage('Max product: ' + maxProduct, []);
+if (console) console.log('Max product: ' + maxProduct);
