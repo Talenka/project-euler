@@ -7,30 +7,34 @@
  * Result: 142913828922
  * Time: 210s
  */
+'use strict';
 
 /** @type {Array.<number>} */
-var Primes = [2];
+let Primes = [2];
 
 /** @type {number} */
-var PrimesSum = 2;
+let PrimesSum = 2;
 
 /** @type {number} */
-var PrimesNumber = 1;
+let PrimesNumber = 1;
 
 /** @type {number} */
-var Max = 2000000;
+const Max = 2000000;
 
-for (var i = 3; i < Max; i += 2) {
+for (let i = 3; i < Max; i += 2) {
 
-  for (var j = 0; j < PrimesNumber; j++)
-    if (i % Primes[j] == 0) break;
+  for (let j = 0; j < PrimesNumber; j++) {
+    if (i % Primes[j] === 0) {
+      break;
+    }
+  }
 
   // If i is not divisible by any previous primes, it's prime
-  if (j == PrimesNumber) {
+  if (j === PrimesNumber) {
     Primes.push(i);
     PrimesSum += i;
     PrimesNumber++;
   }
 }
 
-self.postMessage('Primes sum: ' + PrimesSum, []);
+if (console) console.log('Primes sum: ' + PrimesSum);
