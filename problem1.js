@@ -8,6 +8,9 @@
  */
 'use strict';
 
+/**
+ * @return {number}
+ */
 function main()
 {
   /** @type {number} Current integer (integers below 3 are not 3 or 5 multiple) */
@@ -24,5 +27,6 @@ function main()
     n++;
   }
   
-  return {result: 'Sum: ' + sum};
+  if (console) console.log(sum);
+  return sum;
 }
