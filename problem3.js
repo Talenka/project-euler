@@ -9,32 +9,31 @@
 'use strict';
 
 
-/** @type {number} */
-let N = 600851475143;
+/**
+ * @return {number}
+ */
+function largestPrimeFactor()
+{
+  /** @type {number} */
+  let N = 600851475143;
 
-/** @type {number} Maximal theoretical factor. */
-let Max = Math.sqrt(N);
+  /** @type {number} Maximal theoretical factor. */
+  let Max = Math.sqrt(N);
 
-/** @type {number} */
-let n;
+  /** @type {number} */
+  let largestFactor = 1;
 
-/** @type {number} */
-let largestFactor = 1;
-
-for (let n = 2; n <= Max; n++) {
-
-  if (N % n === 0) {
-
-    largestFactor = Math.max(largestFactor, n);
-
-    N /= n;
-
-    Max = Math.sqrt(N);
-
-    n = 2;
+  for (let n = 2; n <= Max; n++) {
+    if (N % n === 0) {
+      largestFactor = Math.max(largestFactor, n);
+      N /= n;
+      Max = Math.sqrt(N);
+      n = 2;
+    }
   }
+  
+  largestFactor = Math.max(largestFactor, N);
+  
+  if (console) console.log(largestFactor);
+  return largestFactor;
 }
-
-largestFactor = Math.max(largestFactor, N);
-
-self.postMessage('Largest factor: ' + largestFactor, []);
