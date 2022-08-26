@@ -6,23 +6,24 @@
  * Result: 6857
  * Time: 13ms
  */
+'use strict';
 
 
 /** @type {number} */
-var N = 600851475143;
+let N = 600851475143;
 
 /** @type {number} Maximal theoretical factor. */
-var Max = Math.sqrt(N);
+let Max = Math.sqrt(N);
 
 /** @type {number} */
-var n;
+let n;
 
 /** @type {number} */
-var largestFactor = 1;
+let largestFactor = 1;
 
-for (n = 2; n <= Max; n++) {
+for (let n = 2; n <= Max; n++) {
 
-  if (N % n == 0) {
+  if (N % n === 0) {
 
     largestFactor = Math.max(largestFactor, n);
 
