@@ -4,30 +4,39 @@
  * Source: https://projecteuler.net/problem=2
  *
  * Result: 4613732
- * Time: 12ms
+ * Time: 7ms
  */
 'use strict';
 
 
-/** @type {number} */
-let previousTerm = 1;
+/**
+ * @return {number}
+ */
+function fibonacciEvenSum()
+{
+  /** @type {number} */
+  let previousTerm = 1;
 
-/** @type {number} */
-let currentTerm = 2;
+  /** @type {number} */
+  let currentTerm = 2;
 
-/** @type {number} */
-let nextTerm;
+  /** @type {number} */
+  let nextTerm;
 
-/** @type {number} */
-let sum = 0;
+  /** @type {number} */
+  let sum = 0;
 
-while (currentTerm < 4000000) {
+  while (currentTerm < 4000000) {
+    if (currentTerm % 2 === 0) {
+      sum += currentTerm;
+    }
 
-  if (currentTerm % 2 === 0) sum += currentTerm;
-
-  nextTerm = currentTerm + previousTerm;
-  previousTerm = currentTerm;
-  currentTerm = nextTerm;
+    // Iterating Fibonacci's serie
+    nextTerm = currentTerm + previousTerm;
+    previousTerm = currentTerm;
+    currentTerm = nextTerm;
+  }
+  
+  if (console) console.log(sum);
+  return sum;
 }
-
-self.postMessage('Sum: ' + sum, []);
