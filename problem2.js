@@ -12,8 +12,7 @@
 /**
  * @return {number}
  */
-function fibonacciEvenSum()
-{
+function fibonacciEvenSum() {
   /** @type {number} */
   let previousTerm = 1;
 
@@ -36,7 +35,8 @@ function fibonacciEvenSum()
     previousTerm = currentTerm;
     currentTerm = nextTerm;
   }
-  
-  if (console) console.log(sum);
+
   return sum;
 }
+
+console.log(fibonacciEvenSum());

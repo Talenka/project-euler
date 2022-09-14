@@ -14,8 +14,7 @@
  * @param {number} n
  * @return {boolean}
  */
-function isPalindrom(n)
-{
+function isPalindrom(n) {
   /** @type {string} */
   const s = n.toString();
 
@@ -26,8 +25,7 @@ function isPalindrom(n)
 /**
  * @return {number}
  */
-function productLargestPalindrom()
-{
+function productLargestPalindrom() {
   /** @type {number} */
   let largestPalindrom = 0;
 
@@ -39,6 +37,7 @@ function productLargestPalindrom()
     }
   }
 
-  if (console) console.log(largestPalindrom);
   return largestPalindrom;
 }
+
+console.log(productLargestPalindrom());

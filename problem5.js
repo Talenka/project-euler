@@ -17,8 +17,7 @@
  * @param {number} b
  * @return {number}
  */
-function greatestCommonDivisor(a, b)
-{
+function greatestCommonDivisor(a, b) {
   let c;
 
   if (b > a) {
@@ -40,8 +39,7 @@ function greatestCommonDivisor(a, b)
  * @param {number} b
  * @return {number}
  */
-function leastCommonMultiple(a, b)
-{
+function leastCommonMultiple(a, b) {
   return a * b / greatestCommonDivisor(a, b);
 }
 
@@ -49,8 +47,7 @@ function leastCommonMultiple(a, b)
 /**
  * @return {number}
  */
-function smallestEvenlyDivisibleInteger()
-{
+function smallestEvenlyDivisibleInteger() {
   /** @type {number} */
   let N = 1;
 
@@ -58,6 +55,7 @@ function smallestEvenlyDivisibleInteger()
     N = leastCommonMultiple(N, n);
   }
 
-  if (console) console.log(N);
   return N;
 }
+
+console.log(smallestEvenlyDivisibleInteger());

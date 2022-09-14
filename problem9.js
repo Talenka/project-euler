@@ -35,9 +35,8 @@
 
 /**
  * @return {number}
- */ 
-function pythagoreanTripletProduct()
-{
+ */
+function pythagoreanTripletProduct() {
   /** @type {number} */
   let c;
 
@@ -51,6 +50,8 @@ function pythagoreanTripletProduct()
       }
     }
   }
-  
+
   return 0;
 }
+
+pythagoreanTripletProduct();

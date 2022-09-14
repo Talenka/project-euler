@@ -1,0 +1,8 @@
+*.htm*
+*.sublime-*
+*.json
+*.png
+*.jpg
+*.ico
+*.svg
+*.log

@@ -12,8 +12,7 @@
 /**
  * @return {number}
  */
-function nthPrime()
-{
+function nthPrime() {
   /** @type {Array.<number>} */
   let PrimesList = [2];
 
@@ -21,7 +20,6 @@ function nthPrime()
   let PrimesNumber = 1;
 
   for (let n = 3; PrimesNumber < 10001; n += 2) {
-
     // Find if n is divisible by one the first primes.
     for (let i = 0; i < PrimesNumber; i++) {
       if (n % PrimesList[i] === 0) break;
@@ -35,6 +33,7 @@ function nthPrime()
   }
 
   // Given the n+=2 loop outcome, n-th prime is actually n - 2
-  if (console) console.log(n - 2);
   return n - 2;
 }
+
+console.log(nthPrime());

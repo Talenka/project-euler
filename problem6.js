@@ -33,8 +33,7 @@
 /**
  * @return {number}
  */
-function squaresSumDifference()
-{
+function squaresSumDifference() {
   /** @type {number} */
   let difference = 0;
 
@@ -45,3 +44,5 @@ function squaresSumDifference()
   if (console) console.log(difference);
   return difference;
 }
+
+console.log(squaresSumDifference());

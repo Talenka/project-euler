@@ -11,24 +11,22 @@
  * Result: 76576500 (12376th triangular number)
  * Time: 764s
  */
+'use strict';
 
 /** @type {number} */
-var n = 1;
+let n = 1;
 
 /** @type {number} */
-var triangularNumber = 1;
+let triangularNumber = 1;
 
 /** @type {number} */
-var factorsNumber = 1;
+let factorsNumber = 1;
 
 /** @type {number} */
-var maxFactorsNumber = 1;
+let maxFactorsNumber = 1;
 
-while (factorsNumber < 500)
-{
+while (factorsNumber < 500) {
   n++;
-
-  if (n % 100 == 0) self.postMessage(maxFactorsNumber + ' (n=' + n + ')', []);
 
   triangularNumber += n;
 
@@ -43,13 +41,13 @@ self.postMessage('500 factors triangular number: ' + triangularNumber, []);
  * @param {number} n
  * @return {number}
  */
-function factorize(n)
-{
+function factorize(n) {
   /** @type {number} */
-  var factors = 2;
+  let factors = 2;
 
-  for (var i = 2; i <= n / 2; i++)
-    if (n % i == 0) factors++;
+  for (let i = 2; i <= n / 2; i++) {
+    if (n % i === 0) factors++;
+  }
 
   return factors;
 }

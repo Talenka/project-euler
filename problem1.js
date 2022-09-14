@@ -11,9 +11,8 @@
 /**
  * @return {number}
  */
-function main()
-{
-  /** @type {number} Current integer (integers below 3 are not 3 or 5 multiple) */
+function main() {
+  /** @type {number} Current integer (numbers < 3 are not 3 or 5 multiple) */
   let n = 3;
 
   /** @type {number} Sum of integers lower than current n */
@@ -26,7 +25,8 @@ function main()
 
     n++;
   }
-  
-  if (console) console.log(sum);
+
   return sum;
 }
+
+console.log(main());

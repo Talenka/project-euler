@@ -12,8 +12,7 @@
 /**
  * @return {number}
  */
-function largestPrimeFactor()
-{
+function largestPrimeFactor() {
   /** @type {number} */
   let N = 600851475143;
 
@@ -31,9 +30,10 @@ function largestPrimeFactor()
       n = 2;
     }
   }
-  
+
   largestFactor = Math.max(largestFactor, N);
-  
-  if (console) console.log(largestFactor);
+
   return largestFactor;
 }
+
+console.log(largestPrimeFactor());
