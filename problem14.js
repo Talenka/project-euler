@@ -11,13 +11,13 @@
  * Result: 837799 (525-long chain)
  * Time: 2.46s
  */
+'use strict';
 
 /**
  * @param {number} n
  * @return {number}
  */
-function chainLength(n)
-{
+function chainLength(n) {
   chain = 1;
 
   while (n > 1) {
@@ -30,16 +30,15 @@ function chainLength(n)
 }
 
 /** @type {number} */
-var longestChain = 1;
+let longestChain = 1;
 
 /** @type {number} */
-var longestChainStart;
+let longestChainStart;
 
 /** @type {number} */
-var chain;
+let chain;
 
-for (var i = 1; i < 1000000; i++) {
-
+for (let i = 1; i < 1000000; i++) {
   chain = chainLength(i);
 
   if (chain > longestChain) {
@@ -48,4 +47,4 @@ for (var i = 1; i < 1000000; i++) {
   }
 }
 
-self.postMessage('Longest chain start: ' + longestChainStart, []);
+console.log('Longest chain start:', longestChainStart);

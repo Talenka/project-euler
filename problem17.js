@@ -15,67 +15,64 @@
  * Result: 21124
  * Time: 14ms
  */
+'use strict';
 
 /**
  * @param {number} n
  * @return {string}
  */
-function numberName(n)
-{
+function numberName(n) {
   if (n == 1000) {
     return 'one' + 'thousand';
-
   } else if (n >= 100) {
-
     return numberNames[Math.floor(n / 100)] + 'hundred' +
            ((n % 100 == 0) ? '' : 'and' + numberName(n % 100));
-
   } else if (n >= 20) {
-
     return tensNumberNames[Math.floor(n / 10)] +
            ((n % 10 == 0) ? '' : numberName(n % 10));
-
   } else return numberNames[n];
 }
 
 /** @type {number} */
-var totalLettersNumbers = 0;
+let totalLettersNumbers = 0;
 
 /** @type {Array.<string>} */
-var numberNames = ['zero',
-                   'one',
-                   'two',
-                   'three',
-                   'four',
-                   'five',
-                   'six',
-                   'seven',
-                   'eight',
-                   'nine',
-                   'ten',
-                   'eleven',
-                   'twelve',
-                   'thirteen',
-                   'fourteen',
-                   'fifteen',
-                   'sixteen',
-                   'seventeen',
-                   'eighteen',
-                   'nineteen'];
+const numberNames = [
+  'zero',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen'];
 
 /** @type {Array.<string>} */
-var tensNumberNames = ['zero',
-                       'ten',
-                       'twenty',
-                       'thirty',
-                       'forty',
-                       'fifty',
-                       'sixty',
-                       'seventy',
-                       'eighty',
-                       'ninety'];
+const tensNumberNames = [
+  'zero',
+  'ten',
+  'twenty',
+  'thirty',
+  'forty',
+  'fifty',
+  'sixty',
+  'seventy',
+  'eighty',
+  'ninety'];
 
 
-for (var i = 1; i <= 1000; i++) totalLettersNumbers += numberName(i).length;
+for (let i = 1; i <= 1000; i++) totalLettersNumbers += numberName(i).length;
 
-self.postMessage('Letters number: ' + totalLettersNumbers, []);
+console.log('Letters number:', totalLettersNumbers);

@@ -16,22 +16,20 @@
  * @param {Array.<number>} b
  * @return {Array.<number>}
  */
-function digitsArraySum(a, b)
-{
+function digitsArraySum(a, b) {
   if (a.length < b.length) {
-    var c = a;
+    const c = a;
     a = b;
     b = c;
   }
 
   while (a.length > b.length) b.push(0);
 
-  var sum = [];
-  var ind = 0;
+  let sum = [];
+  let ind = 0;
 
-  for (var i = 0, j = a.length; i < j; i++) {
-
-    var d = a[i] + b[i] + ind;
+  for (let i = 0, j = a.length; i < j; i++) {
+    let d = a[i] + b[i] + ind;
 
     if (d >= 10) {
       d -= 10;
@@ -43,7 +41,6 @@ function digitsArraySum(a, b)
       if (i == j - 1) {
         sum[i + 1] = 1;
       }
-
     } else {
       sum[i] = d;
       ind = 0;
@@ -53,11 +50,11 @@ function digitsArraySum(a, b)
   return sum;
 }
 
-var Fnmo = [1];
-var Fn = [1];
-var maxDigitsNumber = 1000;
-var Fnpo;
-var index = 2;
+let Fnmo = [1];
+let Fn = [1];
+const maxDigitsNumber = 1000;
+let Fnpo;
+let index = 2;
 
 while (Fn.length < maxDigitsNumber) {
   Fnpo = digitsArraySum(Fn, Fnmo);
@@ -66,4 +63,4 @@ while (Fn.length < maxDigitsNumber) {
   index++;
 }
 
-self.postMessage('First Fibonacci: ' + index, []);
+console.log('First Fibonacci:', index);

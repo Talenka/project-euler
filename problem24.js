@@ -15,13 +15,13 @@
  * Result: 2783915460
  * Time: 13ms
  */
+'use strict';
 
 /**
  * @param {number} n
  * @return {number}
  */
-function factorial(n)
-{
+function factorial(n) {
   if (n < 2) return 1;
   return n * factorial(n - 1);
 }
@@ -31,19 +31,20 @@ function factorial(n)
  * @param {number} n
  * @return {Array.<number>}
  */
-function deleteElement(a, n)
-{
-  return a.filter(function(i) { return i != n; });
+function deleteElement(a, n) {
+  return a.filter(function(i) {
+    return i !== n;
+  });
 }
 
-var result = '';
-var permutationIndex = 1000000 - 1;
-var elements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var elementsNumber = elements.length;
+let result = '';
+let permutationIndex = 1000000 - 1;
+let elements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let elementsNumber = elements.length;
+let e;
 
 while (elementsNumber > 0) {
-
-  var e = Math.floor(permutationIndex / factorial(elementsNumber - 1));
+  e = Math.floor(permutationIndex / factorial(elementsNumber - 1));
 
   result += elements[e];
 
@@ -54,4 +55,4 @@ while (elementsNumber > 0) {
   elementsNumber--;
 }
 
-self.postMessage('N-th permutation: ' + result, []);
+console.log('N-th permutation:', result);

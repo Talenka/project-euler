@@ -13,13 +13,14 @@
  * Result: 137846528820
  * Time: 12ms
  */
+'use strict';
 
 /** @type {number} */
-var routesNumber = 1;
+let routesNumber = 1;
 
 /** @type {number} */
-var N = 20;
+const N = 20;
 
-for (var i = 1; i <= N; i++) routesNumber *= (N + i) / i;
+for (let i = 1; i <= N; i++) routesNumber *= (N + i) / i;
 
 self.postMessage('Routes number: ' + routesNumber, []);

@@ -18,6 +18,7 @@
  * Result : 171
  * Time: 19ms
  */
+'use strict';
 
 
 /**
@@ -25,11 +26,10 @@
  * @param {number} y
  * @return {number}
  */
-function monthLength(m, y)
-{
-  if (m == 2) return isLeapYear(y) ? 29 : 28;
-  else if (m == 4 || m == 6 || m == 9 || m == 11) return 30;
-  else return 31;
+function monthLength(m, y) {
+  if (m === 2) return isLeapYear(y) ? 29 : 28;
+  if (m === 4 || m === 6 || m === 9 || m === 11) return 30;
+  return 31;
 }
 
 
@@ -37,47 +37,43 @@ function monthLength(m, y)
  * @param {number} y
  * @return {boolean}
  */
-function isLeapYear(y)
-{
-  return (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0)) ? true : false;
+function isLeapYear(y) {
+  return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? true : false;
 }
 
-var current = [1900, 1 , 1];
+let current = [1900, 1, 1];
 
-var start = [1901, 1, 1];
+const start = [1901, 1, 1];
 
-var end = [2000, 12, 31];
+const end = [2000, 12, 31];
 
-var sundaysFirst = 0;
+let sundaysFirst = 0;
 
-var dayOfTheWeek = 1;
+let dayOfTheWeek = 1;
 
-var year, month, day;
+let year;
+let month;
+let day;
 
 while (current[0] < end[0] || current[1] < end[1] || current[2] < end[2]) {
-
   year = current[0];
   month = current[1];
   day = current[2];
 
-  if (dayOfTheWeek % 7 == 0 &&
-      day == 1 &&
+  if (dayOfTheWeek % 7 === 0 &&
+      day === 1 &&
       current[0] >= start[0] &&
       current[1] >= start[1] &&
       current[2] >= start[2]) {
-      sundaysFirst++;
+    sundaysFirst++;
   }
 
   dayOfTheWeek++;
 
-  if (day == monthLength(month, year)) {
-
-    if (month == 12) current = [year + 1, 1, 1];
-
+  if (day === monthLength(month, year)) {
+    if (month === 12) current = [year + 1, 1, 1];
     else current = [year, month + 1, 1];
-
   } else current = [year, month, day + 1];
-
 }
 
 self.postMessage('Sundays first of a month: ' + sundaysFirst, []);

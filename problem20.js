@@ -8,14 +8,15 @@
  *                     23758251185210916864)
  * Time: 7ms
  */
+'use strict';
+
 
 /**
  * @param {number} n
  * @return {number}
  */
-function factorial(n)
-{
-  var f = 1;
+function factorial(n) {
+  let f = 1;
 
   while (n > 1) {
     f *= n;
@@ -29,9 +30,8 @@ function factorial(n)
  * @param {number} n
  * @return {number}
  */
-function sumOfDigits(n)
-{
-  var s = 0;
+function sumOfDigits(n) {
+  let s = 0;
 
   while (n > 1) {
     s += n % 10;
@@ -41,4 +41,4 @@ function sumOfDigits(n)
   return s;
 }
 
-self.postMessage('Digits: ' + sumOfDigits(factorial(100)), []);
+console.log('Digits:', sumOfDigits(factorial(100)));

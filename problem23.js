@@ -24,22 +24,23 @@
  * Result: 4179871
  * Time: 247s
  */
+'use strict';
 
 /**
  * @param {Array.<number>} a
  * @return {number}
  */
-function arraySum(a)
-{
-  return a.reduce(function(sum, n) { return sum + n; });
+function arraySum(a) {
+  return a.reduce(function(sum, n) {
+    return sum + n;
+  });
 }
 
 /**
  * @param {number} n
  * @return {boolean}
  */
-function isAbundant(n)
-{
+function isAbundant(n) {
   return (arraySum(divisorsList(n)) > n);
 }
 
@@ -47,12 +48,11 @@ function isAbundant(n)
  * @param {number} n
  * @return {Array.<number>}
  */
-function divisorsList(n)
-{
-  var divisors = [1];
+function divisorsList(n) {
+  let divisors = [1];
 
-  for (var i = 2; i <= n / 2; i++) {
-    if (n % i == 0) divisors.push(i);
+  for (let i = 2; i <= n / 2; i++) {
+    if (n % i === 0) divisors.push(i);
   }
 
   return divisors;
@@ -62,11 +62,10 @@ function divisorsList(n)
  * @param {number} n
  * @return {Array.<number>}
  */
-function abundantNumbersSmallerThan(n)
-{
-  var abundantNumbers = [];
+function abundantNumbersSmallerThan(n) {
+  let abundantNumbers = [];
 
-  for (var i = 12; i < n; i++) if (isAbundant(i)) abundantNumbers.push(i);
+  for (let i = 12; i < n; i++) if (isAbundant(i)) abundantNumbers.push(i);
 
   return abundantNumbers;
 }
@@ -75,9 +74,8 @@ function abundantNumbersSmallerThan(n)
  * @param {number} n
  * @return {boolean}
  */
-function isSumOfTwoAbundantNumbers(n)
-{
-  return (abundantSums.indexOf(n) != -1);
+function isSumOfTwoAbundantNumbers(n) {
+  return (abundantSums.indexOf(n) !== -1);
 }
 
 
@@ -85,27 +83,28 @@ function isSumOfTwoAbundantNumbers(n)
  * @param {number} n
  * @return {Array.<number>}
  */
-function abundantSumSmallerThan(n)
-{
-  var sums = [];
-  var sum = 0;
+function abundantSumSmallerThan(n) {
+  let sums = [];
+  let sum = 0;
 
-  for (var i = 0, j = abundantNumbers.length; i < j; i++)
-    for (var k = 0; k < j; k++) {
+  for (let i = 0, j = abundantNumbers.length; i < j; i++) {
+    for (let k = 0; k < j; k++) {
       sum = abundantNumbers[i] + abundantNumbers[k];
       if (sum > n) k = j;
       else if (sums.indexOf(sum) == -1) sums.push(sum);
     }
+  }
 
   return sums;
 }
 
-var greatestNonAbundantSum = 28123;
-var abundantNumbers = abundantNumbersSmallerThan(greatestNonAbundantSum);
-var abundantSums = abundantSumSmallerThan(greatestNonAbundantSum);
-var nonAbundantSums = [];
+let greatestNonAbundantSum = 28123;
+let abundantNumbers = abundantNumbersSmallerThan(greatestNonAbundantSum);
+let abundantSums = abundantSumSmallerThan(greatestNonAbundantSum);
+let nonAbundantSums = [];
 
-for (var i = 1; i < greatestNonAbundantSum; i++)
+for (let i = 1; i < greatestNonAbundantSum; i++) {
   if (!isSumOfTwoAbundantNumbers(i)) nonAbundantSums.push(i);
+}
 
 self.postMessage('Non abundant sum: ' + arraySum(nonAbundantSums), []);

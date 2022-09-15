@@ -13,20 +13,19 @@
  * Result: 31626
  * Time: 0.27s
  */
-
+'use strict';
 
 /**
  * @param {number} n
  * @return {number}
  */
-function divisorsSum(n)
-{
-  var sum = 1;
+function divisorsSum(n) {
+  let sum = 1;
 
-  for (var i = 2, j = Math.sqrt(n); i <= j; i++) {
-    if (n % i == 0) {
+  for (let i = 2, j = Math.sqrt(n); i <= j; i++) {
+    if (n % i === 0) {
       sum += i;
-      if (i * i != n) sum += n / i;
+      if (i * i !== n) sum += n / i;
     }
   }
 
@@ -34,22 +33,20 @@ function divisorsSum(n)
 }
 
 /** @type {Array.<number>} */
-var divisorsSums = [0, 0];
+let divisorsSums = [0, 0];
 
 /** @type {number} */
-var amicableNumbersSum = 0;
+let amicableNumbersSum = 0;
 
 /** @type {number} */
-var max = 10000;
+const max = 10000;
 
-var i, j;
+for (let i = 2; i <= max; i++) divisorsSums[i] = divisorsSum(i);
 
-for (i = 2; i <= max; i++) divisorsSums[i] = divisorsSum(i);
-
-for (i = 2, j = divisorsSums.length; i < j; i++) {
+for (let i = 2, j = divisorsSums.length; i < j; i++) {
   if (divisorsSums[i] < j &&
-      divisorsSums[i] != i &&
-      divisorsSums[divisorsSums[i]] == i) {
+      divisorsSums[i] !== i &&
+      divisorsSums[divisorsSums[i]] === i) {
     amicableNumbersSum += i;
   }
 }
