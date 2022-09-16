@@ -10,13 +10,13 @@
  * Result: 40730
  * Time: 35ms
  */
+'use strict';
 
 /**
  * @param {number} n
  * @return {number}
  */
-function factorial(n)
-{
+function factorial(n) {
   if (n < 2) return 1;
   return n * factorial(n - 1);
 }
@@ -25,25 +25,24 @@ function factorial(n)
  * @param {number} n
  * @return {boolean}
  */
-function isCuriousNumber(n)
-{
-  var sum = 0;
-  var i = n;
+function isCuriousNumber(n) {
+  let sum = 0;
+  let i = n;
 
   while (i > 0) {
     sum += factorial(i % 10);
     i = Math.floor(i / 10);
   }
 
-  return sum == n;
+  return (sum === n);
 }
 
-var curiousSum = 0;
+let curiousSum = 0;
 
-for (var n = 10; n <= 50000; n++) {
-
+for (let n = 10; n <= 50000; n++) {
   if (isCuriousNumber(n)) curiousSum += n;
 
-  if (n % 100 == 0)
-    self.postMessage('Curiosity: ' + n + ' : ' + curiousSum, []);
+  if (n % 100 === 0) {
+    console.log('Curiosity: ' + n + ' : ' + curiousSum);
+  }
 }

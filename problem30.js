@@ -18,27 +18,27 @@
  * Result: 443839
  * Time: 56ms
  */
+'use strict';
 
 /**
  * @param {Array.<number>} a
  * @return {number}
  */
-function arraySum(a)
-{
-  if (a.length == 0) return 0;
-  return a.reduce(function(sum, n) { return sum + n; });
+function arraySum(a) {
+  if (a.length === 0) return 0;
+  return a.reduce(function(sum, n) {
+    return sum + n;
+  });
 }
 
 /**
  * @param {number} n
  * @return {number}
  */
-function fifthPowerSumOfNumberDigits(n)
-{
-  var sum = 0;
+function fifthPowerSumOfNumberDigits(n) {
+  let sum = 0;
 
   while (n > 0) {
-
     sum += fifthPower(n % 10);
 
     n = Math.floor(n / 10);
@@ -51,15 +51,16 @@ function fifthPowerSumOfNumberDigits(n)
  * @param {number} n
  * @return {number}
  */
-function fifthPower(n)
-{
-  return n * n * n * n * n;
+function fifthPower(n) {
+  return n ** 5;
 }
 
-var digitsFifthPowers = [];
+let digitsFifthPowers = [];
 
-for (var n = 10; n < 200000; n++)
-  if (n == fifthPowerSumOfNumberDigits(n))
+for (let n = 10; n < 200000; n++) {
+  if (n === fifthPowerSumOfNumberDigits(n)) {
     digitsFifthPowers.push(n);
+  }
+}
 
-self.postMessage('Primes sum: ' + arraySum(digitsFifthPowers), []);
+console.log(arraySum(digitsFifthPowers));
