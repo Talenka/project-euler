@@ -1,31 +1,4 @@
 <!doctype html>
-<html>
 <meta charset=utf-8>
 <title>Project Euler - Test</title>
-<script>
-  
-let slave, timeStart, timeEnd, laps;
-
-function main()
-{
-  timeStart = (new Date()).valueOf();
-
-  slave = new Worker('output.js');
-
-  slave.postMessage('');
-
-  slave.addEventListener('message', function (e) {
-
-    timeEnd = (new Date()).valueOf();
-
-    laps = (timeEnd - timeStart)/1000 + 's';
-
-    document.body.innerHTML = '[' + laps + '] ' + e.data;
-
-  }, false);
-}
-
-</script>
-<body onLoad="main()">
-</body>
-</html>
+<script src="problem46.js"></script>
