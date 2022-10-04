@@ -18,6 +18,7 @@
  * Result: 134043
  * Time: 560ms
  */
+'use strict';
 
 /**
  * @param {number} n

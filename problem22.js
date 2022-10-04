@@ -698,17 +698,17 @@ var names = ['MARY', 'PATRICIA', 'LINDA', 'BARBARA', 'ELIZABETH', 'JENNIFER',
 names = names.sort();
 
 /** @type {number} */
-var score;
+let score;
 
 /** @type {number} */
-var scoresSum = 0;
+let scoresSum = 0;
 
-for (var i = 0, j = names.length; i < j; i++) {
-
+for (let i = 0, j = names.length; i < j; i++) {
   score = 0;
 
-  for (var k = 0, l = names[i].length; k < l; k++)
+  for (let k = 0, l = names[i].length; k < l; k++) {
     score += names[i].charCodeAt(k) - 64;
+  }
 
   scoresSum += score * (i + 1);
 }

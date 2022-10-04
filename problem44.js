@@ -16,30 +16,32 @@
  * Result: 5482660
  * Time: 53s
  */
+'use strict';
 
-var pentagons = [];
-var pentagonsNumber = 3000;
+let pentagons = [];
+const pentagonsNumber = 3000;
 
-for (var n = 1; n < pentagonsNumber; n++) pentagons.push(n * (3 * n - 1) / 2);
+for (let n = 1; n < pentagonsNumber; n++) pentagons.push(n * (3 * n - 1) / 2);
 
 /**
  * @param {number} n
  * @return {boolean}
  */
-function isPentagonal(n)
-{
-  return pentagons.indexOf(n) != -1;
+function isPentagonal(n) {
+  return (pentagons.indexOf(n) !== -1);
 }
 
-var D = Infinity;
-var d = 0;
+let D = Number.POSITIVE_INFINITY;
+let d = 0;
 
-for (var i = 0; i < pentagonsNumber; i++)
-  for (var j = 0; j < pentagonsNumber; j++)
+for (let i = 0; i < pentagonsNumber; i++) {
+  for (let j = 0; j < pentagonsNumber; j++) {
     if (isPentagonal(pentagons[i] + pentagons[j])) {
       d = Math.abs(pentagons[i] - pentagons[j]);
 
       if (isPentagonal(d)) D = Math.min(D, d);
     }
+  }
+}
 
 self.postMessage('Minimal adjacent pentagonal number difference: ' + D, []);

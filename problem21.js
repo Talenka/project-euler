@@ -33,7 +33,7 @@ function divisorsSum(n) {
 }
 
 /** @type {Array.<number>} */
-let divisorsSums = [0, 0];
+const divisorsSums = [0, 0];
 
 /** @type {number} */
 let amicableNumbersSum = 0;

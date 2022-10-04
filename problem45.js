@@ -17,17 +17,17 @@
  * Time: 17s
  */
 
-var T = [];
-var P = [];
-var H = [];
+let T = [];
+let P = [];
+let H = [];
 
-for (var i = 0; i < 100000; i++) {
+for (let i = 0; i < 100000; i++) {
   T[i] = i * (i + 1) / 2;
   P[i] = i * (3 * i - 1) / 2;
   H[i] = i * (2 * i - 1);
 }
 
-var TPH = T.filter(function(e) { return P.indexOf(e) != -1; })
+let TPH = T.filter(function(e) { return P.indexOf(e) != -1; })
            .filter(function(e) { return H.indexOf(e) != -1; });
 
 self.postMessage('TPH: ' + TPH.join('; '), []);

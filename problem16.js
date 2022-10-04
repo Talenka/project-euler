@@ -8,7 +8,7 @@
 'use strict';
 
 /** @type {Array.<number>} */
-let digits = [1];
+const digits = [1];
 
 /** @type {number} */
 let digitsSum = 0;
@@ -26,7 +26,7 @@ for (let i = 1; i <= 1000; i++) {
       ind = true;
       digits[d] -= 10;
 
-      if (d == dl - 1) {
+      if (d === dl - 1) {
         digits.push(1);
         ind = false;
       }
