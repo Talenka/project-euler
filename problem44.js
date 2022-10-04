@@ -18,7 +18,7 @@
  */
 'use strict';
 
-let pentagons = [];
+const pentagons = [];
 const pentagonsNumber = 3000;
 
 for (let n = 1; n < pentagonsNumber; n++) pentagons.push(n * (3 * n - 1) / 2);

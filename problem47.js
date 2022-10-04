@@ -24,38 +24,35 @@
  * @param {number} n
  * @return {Array.<number>}
  */
-function primesSmallerThan(n)
-{
+function primesSmallerThan(n) {
+  const Primes = [2];
 
-  var Primes = [2];
+  for (let i = 3; i < n; i += 2) {
+    for (let j = 0, k = Primes.length; j < k; j++) {
+      if (i % Primes[j] === 0) break;
+    }
 
-  for (var i = 3; i < n; i += 2) {
-    for (var j = 0, k = Primes.length; j < k; j++)
-      if (i % Primes[j] == 0) break;
-
-    if (j == k) Primes.push(i);
-    if (i % 1000 == 1) self.postMessage('Searching Primes: ' + i + '/' + n, []);
+    if (j === k) Primes.push(i);
   }
 
   return Primes;
 }
 
-var Primes = primesSmallerThan(1000);
+const Primes = primesSmallerThan(1000);
 
 /**
  * @param {number} n
  * @return {Array.<number>}
  */
-function distinctPrimesFactorsList(n)
-{
-  var factors = [];
-  var p;
+function distinctPrimesFactorsList(n) {
+  const factors = [];
+  let p;
 
-  for (var i = 0, j = Primes.length; i < j; i++) {
+  for (let i = 0, j = Primes.length; i < j; i++) {
     p = Primes[i];
 
-    if (n % p == 0) {
-      if (factors.indexOf(p) == -1) factors.push(p);
+    if (n % p === 0) {
+      if (factors.indexOf(p) === -1) factors.push(p);
       n = n / p;
     }
   }
@@ -63,21 +60,20 @@ function distinctPrimesFactorsList(n)
   return factors;
 }
 
-var requiredDistinctPrimesFactors = 4;
-var matchingConsecutiveNumbers = [];
+const requiredDistinctPrimesFactors = 4;
+const matchingConsecutiveNumbers = [];
 
-for (var n = 2; n < 200000; n++) {
-
-  if (distinctPrimesFactorsList(n).length == requiredDistinctPrimesFactors) {
+for (let n = 2; n < 200000; n++) {
+  if (distinctPrimesFactorsList(n).length === requiredDistinctPrimesFactors) {
     matchingConsecutiveNumbers.push(n);
 
-    if (matchingConsecutiveNumbers.length == requiredDistinctPrimesFactors)
+    if (matchingConsecutiveNumbers.length == requiredDistinctPrimesFactors) {
       break;
-
-  } else matchingConsecutiveNumbers = [];
+    } else {
+      matchingConsecutiveNumbers = [];
+    }
+  }
 }
 
-self.postMessage('Consecutive numbers with ' + requiredDistinctPrimesFactors +
-                 ' distinct prime factors: ' + matchingConsecutiveNumbers[0],
-                 []);
-
+console.log('Consecutive numbers with ', requiredDistinctPrimesFactors);
+console.log('distinct prime factors: ', matchingConsecutiveNumbers);

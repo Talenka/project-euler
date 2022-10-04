@@ -21,7 +21,7 @@
  * @return {Array.<number>}
  */
 function primesSmallerThan(n) {
-  let Primes = [2];
+  const Primes = [2];
 
   for (let i = 3; i < n; i += 2) {
     for (let j = 0, k = Primes.length; j < k; j++) {

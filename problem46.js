@@ -11,35 +11,35 @@
  * Result: 5777
  * Time: 160ms
  */
+'use strict';
 
-var max = 10000;
+const max = 10000;
 
 /**
  * @param {number} n
  * @return {Array.<number>}
  */
-function primesSmallerThan(n)
-{
-  var Primes = [2];
+function primesSmallerThan(n) {
+  const Primes = [2];
 
-  for (var i = 3; i < n; i += 2) {
-    for (var j = 0, k = Primes.length; j < k; j++)
-      if (i % Primes[j] == 0) break;
+  for (let i = 3; i < n; i += 2) {
+    for (let j = 0, k = Primes.length; j < k; j++) {
+      if (i % Primes[j] === 0) break;
+    }
 
-    if (j == k) Primes.push(i);
+    if (j === k) Primes.push(i);
   }
 
   return Primes;
 }
 
-var Primes = primesSmallerThan(max);
+const Primes = primesSmallerThan(max);
 
 /**
  * @param {number} n
  * @return {boolean}
  */
-function isPrime(n)
-{
+function isPrime(n) {
   return Primes.indexOf(n) > -1;
 }
 
@@ -48,21 +48,18 @@ function isPrime(n)
  * @param {number} n
  * @return {boolean}
  */
-function isGoldbachWriteable(n)
-{
-  for (var i = 0, j = Primes.length, d; i < j; i++) {
+function isGoldbachWriteable(n) {
+  for (let i = 0, j = Primes.length, d; i < j; i++) {
     d = Math.sqrt((n - Primes[i]) / 2);
-    if (d == Math.floor(d)) return true;
+    if (d === Math.floor(d)) return true;
   }
 
   return false;
 }
 
-for (var n = 9; n < max; n += 2) {
+for (let n = 9; n < max; n += 2) {
   if (!isPrime(n) && !isGoldbachWriteable(n)) {
-    self.postMessage('First NGW : ' + n, []);
+    console.log('First Non-goldbach-wrtieable number', n);
     break;
   }
-
-  else self.postMessage(n + ' / ' + max, []);
 }

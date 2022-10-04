@@ -10,6 +10,7 @@
  * Result: 4782th
  * Time: 164ms
  */
+'use strict';
 
 /**
  * @param {Array.<number>} a
@@ -25,7 +26,7 @@ function digitsArraySum(a, b) {
 
   while (a.length > b.length) b.push(0);
 
-  let sum = [];
+  const sum = [];
   let ind = 0;
 
   for (let i = 0, j = a.length; i < j; i++) {

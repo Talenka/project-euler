@@ -49,7 +49,7 @@ function isAbundant(n) {
  * @return {Array.<number>}
  */
 function divisorsList(n) {
-  let divisors = [1];
+  const divisors = [1];
 
   for (let i = 2; i <= n / 2; i++) {
     if (n % i === 0) divisors.push(i);
@@ -63,7 +63,7 @@ function divisorsList(n) {
  * @return {Array.<number>}
  */
 function abundantNumbersSmallerThan(n) {
-  let abundantNumbers = [];
+  const abundantNumbers = [];
 
   for (let i = 12; i < n; i++) if (isAbundant(i)) abundantNumbers.push(i);
 
@@ -84,7 +84,7 @@ function isSumOfTwoAbundantNumbers(n) {
  * @return {Array.<number>}
  */
 function abundantSumSmallerThan(n) {
-  let sums = [];
+  const sums = [];
   let sum = 0;
 
   for (let i = 0, j = abundantNumbers.length; i < j; i++) {
@@ -98,13 +98,13 @@ function abundantSumSmallerThan(n) {
   return sums;
 }
 
-let greatestNonAbundantSum = 28123;
-let abundantNumbers = abundantNumbersSmallerThan(greatestNonAbundantSum);
-let abundantSums = abundantSumSmallerThan(greatestNonAbundantSum);
-let nonAbundantSums = [];
+const greatestNonAbundantSum = 28123;
+const abundantNumbers = abundantNumbersSmallerThan(greatestNonAbundantSum);
+const abundantSums = abundantSumSmallerThan(greatestNonAbundantSum);
+const nonAbundantSums = [];
 
 for (let i = 1; i < greatestNonAbundantSum; i++) {
   if (!isSumOfTwoAbundantNumbers(i)) nonAbundantSums.push(i);
 }
 
-self.postMessage('Non abundant sum: ' + arraySum(nonAbundantSums), []);
+console.log('Non abundant sum', arraySum(nonAbundantSums));
