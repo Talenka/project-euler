@@ -24,6 +24,7 @@
  */
 'use strict';
 
+
 /**
  * @param {number} n
  * @return {Array.<number>}
@@ -52,6 +53,7 @@ function isPrime(n) {
   return Primes.indexOf(n) !== -1;
 }
 
+
 /**
  * @param {number} a
  * @param {number} b
@@ -77,7 +79,7 @@ let maxB;
 const span = 1000;
 
 for (let a = -span; a <= span; a++) {
-  self.postMessage(a + ' : ' + maxConsecutivePrimes, []);
+  console.log(a + ' : ' + maxConsecutivePrimes);
 
   for (let b = -span; b <= span; b++) {
     currentConsecutivePrimes = quadradicFormulaConsecutivePrimes(a, b);

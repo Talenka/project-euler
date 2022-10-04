@@ -35,7 +35,7 @@ while (factorsNumber < 500) {
   maxFactorsNumber = Math.max(maxFactorsNumber, factorsNumber);
 }
 
-self.postMessage('500 factors triangular number: ' + triangularNumber, []);
+console.log('500 factors triangular number', triangularNumber);
 
 /**
  * @param {number} n

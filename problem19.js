@@ -76,4 +76,4 @@ while (current[0] < end[0] || current[1] < end[1] || current[2] < end[2]) {
   } else current = [year, month, day + 1];
 }
 
-self.postMessage('Sundays first of a month: ' + sundaysFirst, []);
+console.log('Sundays first of a month', sundaysFirst);

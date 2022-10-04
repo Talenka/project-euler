@@ -12,6 +12,7 @@
  */
 'use strict';
 
+
 /**
  * @param {Array.<number>} a
  * @param {Array.<number>} b

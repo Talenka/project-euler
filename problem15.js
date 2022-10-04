@@ -23,4 +23,4 @@ const N = 20;
 
 for (let i = 1; i <= N; i++) routesNumber *= (N + i) / i;
 
-self.postMessage('Routes number: ' + routesNumber, []);
+console.log('Routes number', routesNumber);

@@ -20,13 +20,14 @@
  * Result: 669171001
  * Times: 18ms
  */
+'use strict';
 
-var sum = 1;
-var n = 1;
+let sum = 1;
+let n = 1;
 
-for (var r = 1; r < 501; r++) {
+for (let r = 1; r < 501; r++) {
   sum += 4 * n + 20 * r;
   n = n + 8 * r;
 }
 
-self.postMessage('Diagonals sum: ' + sum, []);
+console.log('Diagonals sum', sum);

@@ -60,8 +60,8 @@ function bestRoute(level, index) {
   if (level < triangle.length - 1) {
     return triangle[level][index] +
            Math.max(bestRoute(level + 1, index),
-                    bestRoute(level + 1, index + 1));
+               bestRoute(level + 1, index + 1));
   } else return triangle[level][index];
 }
 
-console.log('Best route: ' + bestRoute(0, 0));
+console.log('Best route', bestRoute(0, 0));

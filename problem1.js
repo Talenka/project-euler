@@ -8,6 +8,7 @@
  */
 'use strict';
 
+
 /**
  * @return {number}
  */

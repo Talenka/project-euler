@@ -14,7 +14,7 @@
  */
 function nthPrime() {
   /** @type {Array.<number>} */
-  let PrimesList = [2];
+  const PrimesList = [2];
 
   /** @type {number} */
   let PrimesNumber = 1;

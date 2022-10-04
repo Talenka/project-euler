@@ -15,6 +15,7 @@
  */
 'use strict';
 
+
 /**
  * @param {number} n
  * @return {number}
@@ -51,4 +52,4 @@ for (let i = 2, j = divisorsSums.length; i < j; i++) {
   }
 }
 
-self.postMessage('Amicable numbers sum: ' + amicableNumbersSum, []);
+console.log('Amicable numbers sum', amicableNumbersSum);

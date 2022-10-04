@@ -20,6 +20,7 @@
  */
 'use strict';
 
+
 /**
  * @param {Array.<number>} a
  * @return {number}
@@ -30,6 +31,7 @@ function arraySum(a) {
     return sum + n;
   });
 }
+
 
 /**
  * @param {number} n
@@ -47,6 +49,7 @@ function fifthPowerSumOfNumberDigits(n) {
   return sum;
 }
 
+
 /**
  * @param {number} n
  * @return {number}
@@ -55,7 +58,7 @@ function fifthPower(n) {
   return n ** 5;
 }
 
-let digitsFifthPowers = [];
+const digitsFifthPowers = [];
 
 for (let n = 10; n < 200000; n++) {
   if (n === fifthPowerSumOfNumberDigits(n)) {

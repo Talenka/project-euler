@@ -13,6 +13,7 @@
  */
 'use strict';
 
+
 /**
  * @param {number} n
  * @return {number}
@@ -21,7 +22,7 @@ function chainLength(n) {
   chain = 1;
 
   while (n > 1) {
-    if (n % 2 == 0) n /= 2;
+    if (n % 2 === 0) n /= 2;
     else n = 3 * n + 1;
     chain++;
   }
@@ -47,4 +48,4 @@ for (let i = 1; i < 1000000; i++) {
   }
 }
 
-console.log('Longest chain start:', longestChainStart);
+console.log('Longest chain start', longestChainStart);

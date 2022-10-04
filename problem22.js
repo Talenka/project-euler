@@ -15,6 +15,7 @@
  * Result: 871198282
  * Time: 15ms
  */
+'use strict';
 
 /** @type {Array.<string>} */
 let names = 'MARY PATRICIA LINDA BARBARA ELIZABETH JENNIFER MARIA SUSAN\

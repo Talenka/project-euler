@@ -26,6 +26,7 @@
  */
 'use strict';
 
+
 /**
  * @param {Array.<number>} a
  * @return {number}
@@ -36,6 +37,7 @@ function arraySum(a) {
   });
 }
 
+
 /**
  * @param {number} n
  * @return {boolean}
@@ -43,6 +45,7 @@ function arraySum(a) {
 function isAbundant(n) {
   return (arraySum(divisorsList(n)) > n);
 }
+
 
 /**
  * @param {number} n
@@ -58,6 +61,7 @@ function divisorsList(n) {
   return divisors;
 }
 
+
 /**
  * @param {number} n
  * @return {Array.<number>}
@@ -69,6 +73,7 @@ function abundantNumbersSmallerThan(n) {
 
   return abundantNumbers;
 }
+
 
 /**
  * @param {number} n

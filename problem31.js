@@ -12,8 +12,13 @@
 'use strict';
 
 const coins = [200, 100, 50, 20, 10, 5, 2, 1];
-const differentWayOfSumming = {};
 
+/**
+ * @param {number} n
+ * @param {number} i
+ * @return {number}
+ * @todo
+ */
 function differentWayForSumming(n, i) {
   if (n === 0) return 0;
 
@@ -24,6 +29,7 @@ function differentWayForSumming(n, i) {
     if (sum + coins[i] === n) dways++;
   }
 
+  return dways;
 }
 
 console.log(differentWayForSumming(200, 0));

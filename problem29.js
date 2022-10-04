@@ -25,7 +25,7 @@
  * @return {number}
  */
 function distinctPowers() {
-  let sequence = [];
+  const sequence = [];
 
   for (let a = 2n; a <= 100n; a++) {
     for (let b = 2n; b <= 100n; b++) {

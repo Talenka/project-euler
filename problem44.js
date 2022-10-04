@@ -44,4 +44,4 @@ for (let i = 0; i < pentagonsNumber; i++) {
   }
 }
 
-self.postMessage('Minimal adjacent pentagonal number difference: ' + D, []);
+console.log('Minimal adjacent pentagonal number difference', D);

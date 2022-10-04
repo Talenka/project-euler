@@ -36,4 +36,4 @@ for (let i = 1; i <= 1000; i++) {
 
 for (let d = 0, dl = digits.length; d < dl; d++) digitsSum += digits[d];
 
-self.postMessage('Digits sum: ' + digitsSum, []);
+console.log('Digits sum', digitsSum);

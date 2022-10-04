@@ -38,4 +38,4 @@ for (let i = 0, end = serie.length - 5; i < end; i++) {
                         serie[i + 3] * serie[i + 4]);
 }
 
-if (console) console.log('Max product:', maxProduct);
+console.log('Max product:', maxProduct);
