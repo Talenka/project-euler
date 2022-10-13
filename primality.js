@@ -19,33 +19,45 @@ const BigMath = {
    * @param {BigInt} n
    */
   addPrime: function(n) {
-    n = this.unsign(n);
+    this.checkBigNat(n);
 
     if (this.primes.indexOf(n) !== -1) {
-      throw new Error('trying to add an already known prime to list:', n);
+      // console.warn('trying to add an already known prime to list', n);
+      return;
     }
 
     this.primes.push(n);
   },
 
   /**
+   * Throw appropriate error if a number is not positive (natural) BigInt.
    * @param {BigInt} n
    */
+  checkBigNat: function checkIfBigNatural(n) {
+    if (typeof n !== 'bigint') throw new TypeError('bigint parameter required');
+    if (n < 0n) throw new RangeError('positive integers only');
+  },
+
+  /**
+   * @param {BigInt} n
+   * @return {number}
+   */
   countPrimesUnder: function(n) {
-    console.time('BigMath.countPrimesUnder');
-    const alreadyFoundPrimes = this.primes.length;
+    this.checkBigNat(n);
+
+    console.time('BigMath');
 
     for (let i = this.primes[this.primes.length - 1]; i < n; i += 2n) {
       this.isPrime(i);
     }
 
-    console.log('primes number:', this.primes.length);
-    console.log('New primes:', this.primes.length - alreadyFoundPrimes);
-    console.timeLog('BigMath.countPrimesUnder');
+    console.timeEnd('BigMath');
+
+    return this.primes.length;
   },
 
-  // Try to convert n to a BigInt
   /**
+   * Try to convert n to a BigInt
    * @param {number|string|BitInt} n
    * @return {BigInt}
    */
@@ -54,20 +66,36 @@ const BigMath = {
   },
 
   /**
-   * Returns factors of n in an array [[m_i, a_i], ...] which are respectively
-   * factors and corresponding exponents giving n, i.e.:
-   * n = m_0 ** e_0 ... * m_? ** e_?
-   * n, m_i and e_i are BigInt
-   *
    * @param {BigInt} n
-   * @return {Array.<Array.<BigInt>>}
+   * @return {Array.<BigInt>}
+   * @todo
    * */
   factorize: function(n) {
-    n = this.unsign(n);
+    this.checkBigNat(n);
 
-    if (this.isPrime(n)) {
-      return [[n, 1n]];
+    let max = this.sqrt(n);
+
+    this.countPrimesUnder(max);
+
+    if (this.isPrime(n)) return [n];
+
+    const p = this.primes;
+
+    const factors = [];
+
+    for (let i = 0, l = p.length; i < l && p[i] <= max; i++) {
+      // console.log(n, p[i], max);
+      if (n % p[i] === 0n) {
+        factors.push(p[i]);
+        n /= p[i];
+        i = -1;
+        // @todo max = this.sqrt(n);
+      }
     }
+
+    if (this.isPrime(n)) factors.push(n);
+
+    return factors;
   },
 
   /**
@@ -75,13 +103,12 @@ const BigMath = {
    * @return {BigInt}
    */
   factorial: function(n) {
-    n = this.unsign(n);
+    this.checkBigNat(n);
 
     let f = 1n;
 
     while (n > 1n) {
-      f *= n;
-      n--;
+      f *= n--;
     }
 
     return f;
@@ -101,22 +128,18 @@ const BigMath = {
     n = this.unsign(n);
 
     // One and Zero are not eligible for primality.
-    if (n < 2n) {
-      return false;
-    }
+    if (n < 2n) return false;
 
     const p = this.primes;
 
     // If n a known prime, nothing more to do
-    if (p.indexOf(n) !== -1) {
-      return true;
-    }
+    if (p.indexOf(n) !== -1) return true;
 
     // The square root of n is the upper limit for a factor for n
     const max = this.sqrt(n);
 
     // If n is divisible by a known prime, it is not a prime
-    for (let i = 0, l = p.length; i < l; i++) {
+    for (let i = 0, l = p.length; i < l && p[i] <= max; i++) {
       if (n % p[i] === 0n) return false;
     }
 
@@ -139,12 +162,10 @@ const BigMath = {
    * @param {BigInt} n
    * @return {BigInt}
    */
-  log2: function(n) {
-    n = this.unsign(n);
+  log2: function logarithmBaseTwo(n) {
+    this.checkBigNat(n);
 
-    if (n === 0n) {
-      throw new Error('log2(0) is negative infinity.');
-    }
+    if (n === 0n) throw new Error('log2(0) is negative infinity.');
 
     let powerOfTwo = 0n;
 
@@ -157,17 +178,26 @@ const BigMath = {
   },
 
   /**
+   * Based on Waldemar Horwat's work (MIT license),
+   * @see {@link https://github.com/waldemarhorwat/integer-roots/}
+   * @todo simplify
    * @param {BigInt} n
    * @return {BigInt}
    */
-  sqrt: function(n) {
-    if (n < 0n) {
-      throw new Error('sqrt(n < 0) is not BigInt. n: ' + n.toString());
-    }
+  sqrt: function squareRootOf(n) {
+    this.checkBigNat(n);
 
-    n = n.toString() * 1;
+    if (n === 0n) return 0n;
 
-    return this.big(Math.ceil(Math.sqrt(n)));
+    let x = 1n << (this.log2(n) >> 1n); // Initial guess
+
+    let next = (x + n / x) >> 1n;
+
+    do {
+      x = next;
+    } while ((next = (x + n / x) >> 1n) < x);
+
+    return x;
   },
 
 
@@ -176,9 +206,7 @@ const BigMath = {
    * @return {BigInt}
    */
   unsign: function(n) {
-    if (typeof n !== 'bigint') {
-      throw new TypeError(n.toString() + ' is not BigInt.');
-    }
+    if (typeof n !== 'bigint') throw new TypeError('bigint parameter required');
 
     if (n < 0n) {
       n *= -1n;
@@ -186,6 +214,7 @@ const BigMath = {
 
     return n;
   },
+
 };
 
 BigMath.init();
