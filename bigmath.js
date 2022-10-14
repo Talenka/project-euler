@@ -6,14 +6,14 @@
  */
 'use strict';
 
-
 const BigMath = {
 
   /**
    * List of already found primes integers
+   * @see bigmath.js for a lot more
    * @type {Array.<BigInt>}
    */
-  primes: [2n, 3n],
+  primes: [2n, 3n, 5n, 7n, 11n, 13n, 17n, 19n, 23n, 29n, 31n, 37n, 41n, 43n],
 
   /**
    * @param {BigInt} n
@@ -22,7 +22,7 @@ const BigMath = {
     this.checkBigNat(n);
 
     if (this.primes.indexOf(n) !== -1) {
-      // console.warn('trying to add an already known prime to list', n);
+      // console.debug('trying to add an already known prime to list', n);
       return;
     }
 
@@ -73,7 +73,7 @@ const BigMath = {
   factorize: function(n) {
     this.checkBigNat(n);
 
-    let max = this.sqrt(n);
+    const max = this.sqrt(n);
 
     this.countPrimesUnder(max);
 
@@ -120,6 +120,27 @@ const BigMath = {
   },
 
   /**
+   * @see https://en.wikipedia.org/wiki/Greatest_common_divisor
+   * Section #Using_Euclid.27s_algorithm
+   *
+   * @param {BigInt} a
+   * @param {BigInt} b
+   * @return {BigInt}
+   */
+  gcd: function greatestCommonDivisor(a, b) {
+    let c;
+
+    if (b > a) {
+      c = b;
+      b = a;
+      a = c;
+    }
+
+    if (a % b === 0n) return b;
+    return this.gcd(b, a % b);
+  },
+
+  /**
    * @param {BigInt} n
    * @return {boolean}
    */
@@ -159,6 +180,18 @@ const BigMath = {
   },
 
   /**
+   * @see https://en.wikipedia.org/wiki/Least_common_multiple
+   * Section #Reduction_by_the_greatest_common_divisor
+   *
+   * @param {BigInt} a
+   * @param {BigInt} b
+   * @return {BigInt}
+   */
+  lcm: function leastCommonMultiple(a, b) {
+    return a * b / this.gcd(a, b);
+  },
+
+  /**
    * @param {BigInt} n
    * @return {BigInt}
    */
@@ -170,7 +203,7 @@ const BigMath = {
     let powerOfTwo = 0n;
 
     while (n >= 2n) {
-      powerOfTwo ++;
+      powerOfTwo++;
       n /= 2n; // Alternatively, n = n >> 1n.
     }
 
@@ -178,6 +211,7 @@ const BigMath = {
   },
 
   /**
+   * @todo test
    * @param {BigInt} a
    * @param {BigInt} b
    * @return {Array.<BigInt>} numerator and denominator of simplified function
@@ -195,7 +229,7 @@ const BigMath = {
   /**
    * Based on Waldemar Horwat's work (MIT license),
    * @see {@link https://github.com/waldemarhorwat/integer-roots/}
-   * @todo simplify
+   * @todo clarify
    * @param {BigInt} n
    * @return {BigInt}
    */
