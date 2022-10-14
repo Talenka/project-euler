@@ -1,13 +1,10 @@
 /**
  * Return the sum of even terms n < 4000000 of Fibonacci serie.
  *
- * Source: https://projecteuler.net/problem=2
- *
- * Result: 4613732
- * Time: 7ms
+ * @see https://projecteuler.net/problem=2
+ * Solution: 4613732
  */
 'use strict';
-
 
 /**
  * @return {number}

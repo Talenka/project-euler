@@ -249,7 +249,6 @@ const BigMath = {
     return x;
   },
 
-
   /**
    * @param {BigInt} n
    * @return {BigInt}

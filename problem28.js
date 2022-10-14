@@ -16,7 +16,7 @@
  * formed in the same way?
  *
  * Strategy: linearization
- * Source: https://projecteuler.net/problem=28
+ * @see https://projecteuler.net/problem=28
  * Result: 669171001
  * Times: 18ms
  */

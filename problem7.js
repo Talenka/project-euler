@@ -2,12 +2,11 @@
  * Return the 10001st prime number.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=7
+ * @see https://projecteuler.net/problem=7
  * Result: 104743
  * Time: 905ms
  */
 'use strict';
-
 
 /**
  * @return {number}

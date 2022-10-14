@@ -18,12 +18,11 @@
  * starting with n = 0.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=27
+ * @see https://projecteuler.net/problem=27
  * Result: -59231 (consecutive primes = 71; a = -61; b=971)
  * Time: 200s
  */
 'use strict';
-
 
 /**
  * @param {number} n
@@ -52,7 +51,6 @@ const Primes = primesSmallerThan(400000);
 function isPrime(n) {
   return Primes.indexOf(n) !== -1;
 }
-
 
 /**
  * @param {number} a

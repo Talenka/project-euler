@@ -11,12 +11,11 @@
  * 5, 6, 7, 8 and 9?
  *
  * Strategy: reduction by sort
- * Source: https://projecteuler.net/problem=24
+ * @see https://projecteuler.net/problem=24
  * Result: 2783915460
  * Time: 13ms
  */
 'use strict';
-
 
 /**
  * @param {number} n
@@ -26,7 +25,6 @@ function factorial(n) {
   if (n < 2) return 1;
   return n * factorial(n - 1);
 }
-
 
 /**
  * @param {Array.<number>} a
@@ -38,7 +36,6 @@ function deleteElement(a, n) {
     return i !== n;
   });
 }
-
 
 let result = '';
 let permutationIndex = 1000000 - 1;

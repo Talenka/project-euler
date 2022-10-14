@@ -21,7 +21,6 @@
  */
 'use strict';
 
-
 /**
  * @return {Array.<number>}
  */

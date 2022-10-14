@@ -20,12 +20,11 @@
  * of two abundant numbers.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=23
+ * @see https://projecteuler.net/problem=23
  * Result: 4179871
  * Time: 247s
  */
 'use strict';
-
 
 /**
  * @param {Array.<number>} a
@@ -37,7 +36,6 @@ function arraySum(a) {
   });
 }
 
-
 /**
  * @param {number} n
  * @return {boolean}
@@ -45,7 +43,6 @@ function arraySum(a) {
 function isAbundant(n) {
   return (arraySum(divisorsList(n)) > n);
 }
-
 
 /**
  * @param {number} n
@@ -61,7 +58,6 @@ function divisorsList(n) {
   return divisors;
 }
 
-
 /**
  * @param {number} n
  * @return {Array.<number>}
@@ -74,7 +70,6 @@ function abundantNumbersSmallerThan(n) {
   return abundantNumbers;
 }
 
-
 /**
  * @param {number} n
  * @return {boolean}
@@ -82,7 +77,6 @@ function abundantNumbersSmallerThan(n) {
 function isSumOfTwoAbundantNumbers(n) {
   return (abundantSums.indexOf(n) !== -1);
 }
-
 
 /**
  * @param {number} n

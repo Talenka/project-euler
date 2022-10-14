@@ -37,7 +37,6 @@ function isPandigital(n) {
   return true;
 }
 
-
 /**
  * @return {number}
  */

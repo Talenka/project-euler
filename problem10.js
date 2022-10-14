@@ -2,7 +2,7 @@
  * Return the sum of prime numbers < 2000000
  * N = 600851475143.
  *
- * Source: https://projecteuler.net/problem=10
+ * @see https://projecteuler.net/problem=10
  *
  * Result: 142913828922
  * Time: 210s
@@ -10,7 +10,7 @@
 'use strict';
 
 /** @type {Array.<number>} */
-let Primes = [2];
+const Primes = [2];
 
 /** @type {number} */
 let PrimesSum = 2;

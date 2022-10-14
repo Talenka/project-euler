@@ -1,13 +1,10 @@
 /**
  * Return the sum of integers n < 1000, which are multiples of 3 or 5.
  *
- * Source: https://projecteuler.net/problem=1
- *
- * Result: 233168
- * Time: 12ms
+ * @see https://projecteuler.net/problem=1
+ * Solution: 233168
  */
 'use strict';
-
 
 /**
  * @return {number}

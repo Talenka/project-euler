@@ -2,12 +2,11 @@
  * Return the smallest integer N evenly divisible by all integers n < 20.
  *
  * Strategy: In fact, this is just the least common multiple of 1, 2, ..., 20.
- * Source: https://projecteuler.net/problem=5
+ * @see https://projecteuler.net/problem=5
  * Result: 232792560
  * Time: 18ms
  */
 'use strict';
-
 
 /**
  * See https://en.wikipedia.org/wiki/Greatest_common_divisor
@@ -30,7 +29,6 @@ function greatestCommonDivisor(a, b) {
   return greatestCommonDivisor(b, a % b);
 }
 
-
 /**
  * See https://en.wikipedia.org/wiki/Least_common_multiple
  * Section #Reduction_by_the_greatest_common_divisor
@@ -42,7 +40,6 @@ function greatestCommonDivisor(a, b) {
 function leastCommonMultiple(a, b) {
   return a * b / greatestCommonDivisor(a, b);
 }
-
 
 /**
  * @return {number}

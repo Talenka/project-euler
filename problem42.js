@@ -20,7 +20,6 @@
  */
 'use strict';
 
-
 /**
  * @param {string} word
  * @return {number}

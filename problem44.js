@@ -12,7 +12,7 @@
  * of D?
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=44
+ * @see https://projecteuler.net/problem=44
  * Result: 5482660
  * Time: 53s
  */

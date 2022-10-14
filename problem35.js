@@ -10,7 +10,7 @@
  * How many circular primes are there below one million?
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=35
+ * @see https://projecteuler.net/problem=35
  * Result: 55
  * Time: 66s
  */

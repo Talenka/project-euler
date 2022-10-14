@@ -11,25 +11,27 @@
  */
 'use strict';
 
-const coins = [200, 100, 50, 20, 10, 5, 2, 1];
-
 /**
- * @param {number} n
- * @param {number} i
- * @return {number}
- * @todo
+ * @param {number} sum
+ * @return {BigInt}
  */
-function differentWayForSumming(n, i) {
-  if (n === 0) return 0;
+function differentWaysOfObtain(sum) {
+  const coins = [1, 2, 5, 10, 20, 50, 100, 200];
+  const ways = {1: 1n, 200: 1n};
 
-  let sum = 0;
-  let dways = 0;
+  let result = 0n;
 
-  for (let j = coins.length; i < j; i++) {
-    if (sum + coins[i] === n) dways++;
+  for (let i = 1; i <= sum / 2; i++) {
+    for (const c in coins) {
+      if (sum - coins[c] >= 0) {
+        ways[i] = ways[coins[c]] * ways[sum - coins[c]];
+        result += ways[i];
+      } else {
+      }
+    }
   }
 
-  return dways;
+  return result;
 }
 
-console.log(differentWayForSumming(200, 0));
+console.log(differentWaysOfObtain(200));

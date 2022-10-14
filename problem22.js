@@ -11,7 +11,7 @@
  *
  * What is the total of all the name scores in the file?
  *
- * Source: https://projecteuler.net/problem=22
+ * @see https://projecteuler.net/problem=22
  * Result: 871198282
  * Time: 15ms
  */

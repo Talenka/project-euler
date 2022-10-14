@@ -23,12 +23,11 @@
  *
  * Finally, all we have to do is to sum this formula over integers n < 100.
  *
- * Source: https://projecteuler.net/problem=6
+ * @see https://projecteuler.net/problem=6
  * Result: 25164150
  * Time: 14ms
  */
 'use strict';
-
 
 /**
  * @return {number}

@@ -1,13 +1,10 @@
 /**
  * Return the largest prime factor of N = 600851475143.
  *
- * Strategy: progressive reduction
- * Source: https://projecteuler.net/problem=3
- * Result: 6857
- * Time: 13ms
+ * @see https://projecteuler.net/problem=3
+ * Solution: 6857
  */
 'use strict';
-
 
 /**
  * @return {number}

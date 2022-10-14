@@ -13,7 +13,6 @@
  */
 'use strict';
 
-
 /**
  * @param {number} n
  * @return {number}

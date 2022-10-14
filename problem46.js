@@ -7,7 +7,7 @@
  * written as the sum of a prime and twice a square?
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=46
+ * @see https://projecteuler.net/problem=46
  * Result: 5777
  * Time: 160ms
  */

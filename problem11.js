@@ -3,12 +3,11 @@
  * 20x20 grid (horizontally, vertically, and diagonally).
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=11
+ * @see https://projecteuler.net/problem=11
  * Result: 70600674
  * Time: 17ms
  */
 'use strict';
-
 
 /**
  * The Grid

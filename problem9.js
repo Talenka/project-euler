@@ -23,15 +23,13 @@
  * Hence:
  * [3]    a + b - 500 = a * b / 1000
  *
- *
  * Plus, we have sympathetic upper bounds: a < 500 and b < 500.
  *
- * Source: https://projecteuler.net/problem=9
+ * @see https://projecteuler.net/problem=9
  * Result: 31875000 (a = 200; b = 375, c = 425)
  * Time: 15ms
  */
 'use strict';
-
 
 /**
  * @return {number}

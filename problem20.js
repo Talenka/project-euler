@@ -2,14 +2,13 @@
  * Find the sum of the digits in the number 100!
  *
  * Strategy: none ;-)
- * Source: https://projecteuler.net/problem=20
+ * @see https://projecteuler.net/problem=20
  * Result: 648 (100! = 933262154439441526816992388562667004907159682643816214685
  *                     929638952175999932299156089414639761565182862536979208272
  *                     23758251185210916864)
  * Time: 7ms
  */
 'use strict';
-
 
 /**
  * @param {number} n

@@ -20,7 +20,6 @@
  */
 'use strict';
 
-
 /**
  * @param {number} m
  * @param {number} y
@@ -31,7 +30,6 @@ function monthLength(m, y) {
   if (m === 4 || m === 6 || m === 9 || m === 11) return 30;
   return 31;
 }
-
 
 /**
  * @param {number} y

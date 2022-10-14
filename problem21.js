@@ -9,12 +9,11 @@
  *
  * Evaluate the sum of all the amicable numbers under 10000.
  *
- * Source: https://projecteuler.net/problem=21
+ * @see https://projecteuler.net/problem=21
  * Result: 31626
  * Time: 0.27s
  */
 'use strict';
-
 
 /**
  * @param {number} n

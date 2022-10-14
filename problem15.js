@@ -15,10 +15,8 @@
  */
 'use strict';
 
-/** @type {number} */
 let routesNumber = 1;
 
-/** @type {number} */
 const N = 20;
 
 for (let i = 1; i <= N; i++) routesNumber *= (N + i) / i;

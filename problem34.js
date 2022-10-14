@@ -6,7 +6,7 @@
  * Note: as 1! = 1 and 2! = 2 are not sums they are not included.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=34
+ * @see https://projecteuler.net/problem=34
  * Result: 40730
  * Time: 35ms
  */

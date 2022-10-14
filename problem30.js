@@ -14,12 +14,11 @@
  * powers of their digits.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=30
+ * @see https://projecteuler.net/problem=30
  * Result: 443839
  * Time: 56ms
  */
 'use strict';
-
 
 /**
  * @param {Array.<number>} a
@@ -31,7 +30,6 @@ function arraySum(a) {
     return sum + n;
   });
 }
-
 
 /**
  * @param {number} n
@@ -48,7 +46,6 @@ function fifthPowerSumOfNumberDigits(n) {
 
   return sum;
 }
-
 
 /**
  * @param {number} n

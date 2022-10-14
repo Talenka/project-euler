@@ -20,7 +20,6 @@
  */
 'use strict';
 
-
 /**
  * @return {number}
  */

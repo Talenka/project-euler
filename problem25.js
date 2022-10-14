@@ -6,12 +6,11 @@
  * What is the first term in the Fibonacci sequence to contain 1000 digits?
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=25
+ * @see https://projecteuler.net/problem=25
  * Result: 4782th
  * Time: 164ms
  */
 'use strict';
-
 
 /**
  * @param {Array.<number>} a

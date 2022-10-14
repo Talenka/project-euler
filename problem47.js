@@ -14,7 +14,7 @@
  * What is the first of these numbers?
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=47
+ * @see https://projecteuler.net/problem=47
  * Result: 134043
  * Time: 560ms
  */

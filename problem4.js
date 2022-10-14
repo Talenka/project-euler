@@ -3,12 +3,11 @@
  * numbers, i.e. from 100 to 999.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=4
+ * @see https://projecteuler.net/problem=4
  * Result: 906609
  * Time: 66ms
  */
 'use strict';
-
 
 /**
  * @param {number} n
@@ -20,7 +19,6 @@ function isPalindrom(n) {
 
   return (s[0] === s[5] && s[1] === s[4] && s[2] === s[3]);
 }
-
 
 /**
  * @return {number}

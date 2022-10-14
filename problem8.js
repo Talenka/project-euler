@@ -2,7 +2,7 @@
  * Return the largest product of 5 consecutive digits in a serie of 1000.
  *
  * Strategy: brute force
- * Source: https://projecteuler.net/problem=8
+ * @see https://projecteuler.net/problem=8
  * Result: 40824
  * Time: 12ms
  */

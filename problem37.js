@@ -15,7 +15,6 @@
  */
 'use strict';
 
-
 /**
  * @param {BigInt} n
  * @return {boolean}

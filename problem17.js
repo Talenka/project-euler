@@ -7,7 +7,7 @@
  *
  * NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and
  * forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20
- * letters. The use of "and" when writing out numbers is in compliance with
+ * letters. The use of *and* when writing out numbers is in compliance with
  * British usage.
  *
  * Source : https://projecteuler.net/problem=17
@@ -16,7 +16,6 @@
  * Time: 14ms
  */
 'use strict';
-
 
 /**
  * @param {number} n
@@ -72,7 +71,6 @@ const tensNumberNames = [
   'seventy',
   'eighty',
   'ninety'];
-
 
 for (let i = 1; i <= 1000; i++) totalLettersNumbers += numberName(i).length;
 
