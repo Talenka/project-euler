@@ -178,6 +178,21 @@ const BigMath = {
   },
 
   /**
+   * @param {BigInt} a
+   * @param {BigInt} b
+   * @return {Array.<BigInt>} numerator and denominator of simplified function
+   */
+  reduceFraction: function(a, b) {
+    while (b % a === 0) {
+      const d = Math.min(a, b);
+      a /= d;
+      b /= d;
+    }
+
+    return [a, b];
+  },
+
+  /**
    * Based on Waldemar Horwat's work (MIT license),
    * @see {@link https://github.com/waldemarhorwat/integer-roots/}
    * @todo simplify
