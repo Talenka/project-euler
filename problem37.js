@@ -9,7 +9,7 @@
  * Find the sum of the only eleven primes that are both truncatable from left to
  * right and right to left.
  *
- * @see {@link https://projecteuler.net/problem=33}
+ * @see {@link https://projecteuler.net/problem=37}
  *
  * Solution: 748317
  */
