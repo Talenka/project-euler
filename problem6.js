@@ -40,7 +40,7 @@ function squaresSumDifference() {
     difference += (n - 1) * n * n;
   }
 
-  if (console) console.log(difference);
+  console.log(difference);
   return difference;
 }
 

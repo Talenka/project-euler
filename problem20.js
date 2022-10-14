@@ -40,4 +40,4 @@ function sumOfDigits(n) {
   return s;
 }
 
-console.log('Digits:', sumOfDigits(factorial(100)));
+console.log(sumOfDigits(factorial(100)));

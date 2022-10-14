@@ -67,7 +67,7 @@ for (let n = 2; n < 200000; n++) {
   if (distinctPrimesFactorsList(n).length === requiredDistinctPrimesFactors) {
     matchingConsecutiveNumbers.push(n);
 
-    if (matchingConsecutiveNumbers.length == requiredDistinctPrimesFactors) {
+    if (matchingConsecutiveNumbers.length === requiredDistinctPrimesFactors) {
       break;
     } else {
       matchingConsecutiveNumbers = [];

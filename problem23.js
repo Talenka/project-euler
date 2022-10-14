@@ -90,7 +90,7 @@ function abundantSumSmallerThan(n) {
     for (let k = 0; k < j; k++) {
       sum = abundantNumbers[i] + abundantNumbers[k];
       if (sum > n) k = j;
-      else if (sums.indexOf(sum) == -1) sums.push(sum);
+      else if (sums.indexOf(sum) === -1) sums.push(sum);
     }
   }
 

@@ -22,15 +22,18 @@
  * @return {string}
  */
 function numberName(n) {
-  if (n === 1000) {
-    return 'one' + 'thousand';
-  } else if (n >= 100) {
+  if (n === 1000) return 'one' + 'thousand';
+
+  if (n >= 100) {
     return numberNames[Math.floor(n / 100)] + 'hundred' +
            ((n % 100 === 0) ? '' : 'and' + numberName(n % 100));
-  } else if (n >= 20) {
+  }
+
+  if (n >= 20) {
     return tensNumberNames[Math.floor(n / 10)] +
            ((n % 10 === 0) ? '' : numberName(n % 10));
-  } else return numberNames[n];
+  }
+  return numberNames[n];
 }
 
 /** @type {number} */

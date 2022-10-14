@@ -22,7 +22,8 @@ let PrimesNumber = 1;
 const Max = 2000000;
 
 for (let i = 3; i < Max; i += 2) {
-  for (let j = 0; j < PrimesNumber; j++) {
+  let j;
+  for (j = 0; j < PrimesNumber; j++) {
     if (i % Primes[j] === 0) {
       break;
     }
@@ -36,4 +37,4 @@ for (let i = 3; i < Max; i += 2) {
   }
 }
 
-if (console) console.log('Primes sum: ' + PrimesSum);
+if (console) console.log(PrimesSum);

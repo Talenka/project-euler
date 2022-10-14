@@ -26,7 +26,6 @@ function differentWaysOfObtain(sum) {
       if (sum - coins[c] >= 0) {
         ways[i] = ways[coins[c]] * ways[sum - coins[c]];
         result += ways[i];
-      } else {
       }
     }
   }

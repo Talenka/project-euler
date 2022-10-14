@@ -35,7 +35,7 @@ function searchCuriousFractions() {
 
     // Bounds b to [a+1; 99] so a / b < 1
     for (let b = a + 1; b <= 99; b++) {
-      if (a * (b % 10) == b * Math.floor(a / 10)) {
+      if (a * (b % 10) === b * Math.floor(a / 10)) {
         // Skips last trivial ones
         if (a % 10 !== b % 10 && a % 10 === Math.floor(b / 10)) {
           curiousNumerators.push(a);

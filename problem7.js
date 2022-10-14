@@ -18,9 +18,13 @@ function nthPrime() {
   /** @type {number} */
   let PrimesNumber = 1;
 
-  for (let n = 3; PrimesNumber < 10001; n += 2) {
+  let n;
+
+  for (n = 3; PrimesNumber < 10001; n += 2) {
+    let i;
+
     // Find if n is divisible by one the first primes.
-    for (let i = 0; i < PrimesNumber; i++) {
+    for (i = 0; i < PrimesNumber; i++) {
       if (n % PrimesList[i] === 0) break;
     }
 

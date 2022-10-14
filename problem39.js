@@ -14,10 +14,9 @@
 'use strict';
 
 /**
- * @param {number} p
- * @return {Object}
+ * @return {number}
  */
-function maxDiffPerimeters(p) {
+function maxDiffPerimeters() {
   const max = 1000;
   const perimeters = [];
   let pMax = 12; // 1st integer right triangle {3,4,5}

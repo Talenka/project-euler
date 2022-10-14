@@ -60,7 +60,9 @@ function bestRoute(level, index) {
     return triangle[level][index] +
            Math.max(bestRoute(level + 1, index),
                bestRoute(level + 1, index + 1));
-  } else return triangle[level][index];
+  }
+
+  return triangle[level][index];
 }
 
 console.log('Best route', bestRoute(0, 0));
