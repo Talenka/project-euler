@@ -6,3 +6,6 @@ test.html
 *.ico
 *.svg
 *.log
+
+# Solutions after #100 can not be published (It is a rule of Project Euler)
+problem???.js
