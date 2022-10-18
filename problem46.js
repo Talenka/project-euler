@@ -17,7 +17,7 @@ const max = 10000;
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function primesSmallerThan(n) {
   const Primes = [2];

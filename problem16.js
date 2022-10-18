@@ -7,7 +7,7 @@
  */
 'use strict';
 
-/** @type {Array.<number>} */
+/** @type {number[]} */
 const digits = [1];
 
 /** @type {number} */

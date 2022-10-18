@@ -22,7 +22,7 @@
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function primesSmallerThan(n) {
   const Primes = [2];
@@ -42,7 +42,7 @@ const Primes = primesSmallerThan(1000);
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function distinctPrimesFactorsList(n) {
   const factors = [];

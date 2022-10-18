@@ -8,14 +8,13 @@
  * Strategy: brute force
  * @see https://projecteuler.net/problem=25
  * Result: 4782th
- * Time: 164ms
  */
 'use strict';
 
 /**
- * @param {Array.<number>} a
- * @param {Array.<number>} b
- * @return {Array.<number>}
+ * @param {number[]} a
+ * @param {number[]} b
+ * @return {number[]}
  */
 function digitsArraySum(a, b) {
   if (a.length < b.length) {

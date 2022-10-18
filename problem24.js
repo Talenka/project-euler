@@ -27,9 +27,9 @@ function factorial(n) {
 }
 
 /**
- * @param {Array.<number>} a
+ * @param {number[]} a
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function deleteElement(a, n) {
   return a.filter(function(i) {

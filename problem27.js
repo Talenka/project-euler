@@ -26,7 +26,7 @@
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function primesSmallerThan(n) {
   const Primes = [2];

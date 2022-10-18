@@ -11,7 +11,7 @@ const BigMath = {
   /**
    * List of already found primes integers
    * @see bigmath.js for a lot more
-   * @type {Array.<BigInt>}
+   * @type {BigInt[]}
    */
   primes: [2n, 3n, 5n, 7n, 11n, 13n, 17n, 19n, 23n, 29n, 31n, 37n, 41n, 43n],
 
@@ -67,7 +67,7 @@ const BigMath = {
 
   /**
    * @param {BigInt} n
-   * @return {Array.<BigInt>}
+   * @return {BigInt[]}
    * @todo
    * */
   factorize: function(n) {
@@ -214,7 +214,7 @@ const BigMath = {
    * @todo test
    * @param {BigInt} a
    * @param {BigInt} b
-   * @return {Array.<BigInt>} numerator and denominator of simplified function
+   * @return {BigInt[]} numerator and denominator of simplified function
    */
   reduceFraction: function(a, b) {
     while (b % a === 0) {

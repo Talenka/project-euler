@@ -24,7 +24,7 @@ function isPalindrom(s) {
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function doubleBasePalindromsBelow(n) {
   const result = [];

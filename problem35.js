@@ -18,7 +18,7 @@
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  * @todo debug
  */
 function primesSmallerThan(n) {

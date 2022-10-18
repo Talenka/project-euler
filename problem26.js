@@ -45,9 +45,7 @@
  */
 'use strict';
 
-/**
- * @param {BigInt} max
- */
+/** @param {BigInt} max */
 function longestReciprocalCycleBelow(max) {
   const cycles = {};
 

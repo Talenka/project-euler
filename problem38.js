@@ -37,9 +37,7 @@ function isPandigital(n) {
   return true;
 }
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function searchConcatenedPandigitalProduct() {
   const max = 50000;
   let greatestCPP = 0;

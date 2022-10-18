@@ -6,17 +6,13 @@
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function largestPrimeFactor() {
-  /** @type {number} */
   let N = 600851475143;
 
   /** @type {number} Maximal theoretical factor. */
   let Max = Math.sqrt(N);
 
-  /** @type {number} */
   let largestFactor = 1;
 
   for (let n = 2; n <= Max; n++) {

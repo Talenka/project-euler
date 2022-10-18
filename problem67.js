@@ -28,8 +28,8 @@
 'use strict';
 
 /**
- * @param {Array.<Array.<number>>} triangle
- * @return {Array.<number>}
+ * @param {Array.<number[]>} triangle
+ * @return {number[]}
  */
 function maximumPathSum2(triangle) {
   // The trick is to start at the bottom of the triangle...

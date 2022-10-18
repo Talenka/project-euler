@@ -10,10 +10,8 @@
  *
  * Find the next triangle number that is also pentagonal and hexagonal.
  *
- * Strategy: brute force (with an arbitrary ceil at 100000).
  * @see https://projecteuler.net/problem=45
  * Result: 1533776805
- * Time: 17s
  */
 'use strict';
 

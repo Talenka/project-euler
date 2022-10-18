@@ -35,9 +35,7 @@ function isPandigital(n) {
   return true;
 }
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function pandigitalProductsSum() {
   const max = 2000;
   const pandigitalProducts = [];

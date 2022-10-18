@@ -6,7 +6,6 @@
  * Find the last ten digits of the series, 1**1 + 2**2 + ... + 1000**1000.
  *
  * @see {@link https://projecteuler.net/problem=48}
- *
  * Solution: 9110846700
  */
 'use strict';

@@ -27,7 +27,7 @@
 'use strict';
 
 /**
- * @param {Array.<number>} a
+ * @param {number[]} a
  * @return {number}
  */
 function arraySum(a) {
@@ -46,7 +46,7 @@ function isAbundant(n) {
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function divisorsList(n) {
   const divisors = [1];
@@ -60,7 +60,7 @@ function divisorsList(n) {
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function abundantNumbersSmallerThan(n) {
   const abundantNumbers = [];
@@ -80,7 +80,7 @@ function isSumOfTwoAbundantNumbers(n) {
 
 /**
  * @param {number} n
- * @return {Array.<number>}
+ * @return {number[]}
  */
 function abundantSumSmallerThan(n) {
   const sums = [];

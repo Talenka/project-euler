@@ -5,7 +5,6 @@
  * Strategy: brute force
  * @see https://projecteuler.net/problem=4
  * Result: 906609
- * Time: 66ms
  */
 'use strict';
 
@@ -20,9 +19,7 @@ function isPalindrom(n) {
   return (s[0] === s[5] && s[1] === s[4] && s[2] === s[3]);
 }
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function productLargestPalindrom() {
   /** @type {number} */
   let largestPalindrom = 0;

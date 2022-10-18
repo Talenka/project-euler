@@ -40,15 +40,10 @@ function isLeapYear(y) {
 }
 
 let current = [1900, 1, 1];
-
 const start = [1901, 1, 1];
-
 const end = [2000, 12, 31];
-
 let sundaysFirst = 0;
-
 let dayOfTheWeek = 1;
-
 let year;
 let month;
 let day;

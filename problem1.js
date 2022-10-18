@@ -6,9 +6,7 @@
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function main() {
   /** @type {number} Current integer (numbers < 3 are not 3 or 5 multiple) */
   let n = 3;

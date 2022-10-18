@@ -32,7 +32,7 @@
  */
 'use strict';
 
-/** @type {Array.<Array.<number>>} */
+/** @type {Array.<number[]>} */
 const triangle = [
   [75],
   [95, 64],

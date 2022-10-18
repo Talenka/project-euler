@@ -31,12 +31,9 @@
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function pythagoreanTripletProduct() {
-  /** @type {number} */
-  let c;
+  let c = 0;
 
   for (let a = 1; a < 500; a++) {
     for (let b = a + 1; b < 500; b++) {

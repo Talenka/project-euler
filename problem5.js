@@ -41,9 +41,7 @@ function leastCommonMultiple(a, b) {
   return a * b / greatestCommonDivisor(a, b);
 }
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function smallestEvenlyDivisibleInteger() {
   /** @type {number} */
   let N = 1;

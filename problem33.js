@@ -21,9 +21,7 @@
  */
 'use strict';
 
-/**
- * @return {Array.<number>}
- */
+/** @return {number[]} */
 function searchCuriousFractions() {
   const curiousNumerators = [];
   const curiousDenominators = [];

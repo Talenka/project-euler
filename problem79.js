@@ -13,14 +13,11 @@
  * so as to determine the shortest possible secret pass-code of unknown length.
  *
  * @see {@link https://projecteuler.net/problem=79}
- *
  * Solution: 73162890
  */
 'use strict';
 
-/**
- * @return {{exists: Array, precedes: Array}}
- */
+/** @return {{exists: Array, precedes: Array}} */
 function understandKeylog() {
   const keylog = [319, 680, 180, 690, 129, 620, 762, 689, 762, 318, 368, 710,
     720, 710, 629, 168, 160, 689, 716, 731, 736, 729, 316, 729, 729, 710, 769,

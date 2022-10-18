@@ -20,9 +20,7 @@
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function distinctPowers() {
   const sequence = [];
 

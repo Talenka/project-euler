@@ -9,15 +9,13 @@
  *
  * Here this is just (2N)! / (N!)^2
  *
- * Source : https://projecteuler.net/problem=15
+ * @see https://projecteuler.net/problem=15
  * Result: 137846528820
- * Time: 12ms
  */
 'use strict';
 
-let routesNumber = 1;
-
 const N = 20;
+let routesNumber = 1;
 
 for (let i = 1; i <= N; i++) routesNumber *= (N + i) / i;
 

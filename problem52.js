@@ -13,7 +13,6 @@
  */
 'use strict';
 
-
 /**
  * @param {BigInt|number|string} n
  * @return {BigInt}
@@ -22,9 +21,7 @@ function smallestPermutationOf(n) {
   return n.toString().split('').sort().join('');
 }
 
-/**
- * @return {?number}
- */
+/** @return {?number} */
 function smallestMultiplicativeAnagram() {
   for (let n = 1; n < 200000; n++) {
     const p = smallestPermutationOf(n);

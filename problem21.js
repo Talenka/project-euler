@@ -11,7 +11,6 @@
  *
  * @see https://projecteuler.net/problem=21
  * Result: 31626
- * Time: 0.27s
  */
 'use strict';
 
@@ -32,13 +31,8 @@ function divisorsSum(n) {
   return sum;
 }
 
-/** @type {Array.<number>} */
 const divisorsSums = [0, 0];
-
-/** @type {number} */
 let amicableNumbersSum = 0;
-
-/** @type {number} */
 const max = 10000;
 
 for (let i = 2; i <= max; i++) divisorsSums[i] = divisorsSum(i);

@@ -16,12 +16,11 @@
  * Strategy: brute force
  * @see https://projecteuler.net/problem=30
  * Result: 443839
- * Time: 56ms
  */
 'use strict';
 
 /**
- * @param {Array.<number>} a
+ * @param {number[]} a
  * @return {number}
  */
 function arraySum(a) {

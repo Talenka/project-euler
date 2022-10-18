@@ -9,29 +9,18 @@
  *
  * Source : https://projecteuler.net/problem=12
  * Result: 76576500 (12376th triangular number)
- * Time: 764s
  */
 'use strict';
 
-/** @type {number} */
 let n = 1;
-
-/** @type {number} */
 let triangularNumber = 1;
-
-/** @type {number} */
 let factorsNumber = 1;
-
-/** @type {number} */
 let maxFactorsNumber = 1;
 
 while (factorsNumber < 500) {
   n++;
-
   triangularNumber += n;
-
   factorsNumber = factorize(triangularNumber);
-
   maxFactorsNumber = Math.max(maxFactorsNumber, factorsNumber);
 }
 

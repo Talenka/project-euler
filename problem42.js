@@ -15,7 +15,6 @@
  * words?
  *
  * @see {@link https://projecteuler.net/problem=42}
- *
  * Solution: 162
  */
 'use strict';
@@ -32,9 +31,7 @@ function wordValue(word) {
   return result;
 }
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function searchTriangleWords() {
   const triangles = [];
   let triangleWords = 0;

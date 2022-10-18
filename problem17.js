@@ -10,10 +10,8 @@
  * letters. The use of *and* when writing out numbers is in compliance with
  * British usage.
  *
- * Source : https://projecteuler.net/problem=17
- *
+ * @see https://projecteuler.net/problem=17
  * Result: 21124
- * Time: 14ms
  */
 'use strict';
 
@@ -36,10 +34,9 @@ function numberName(n) {
   return numberNames[n];
 }
 
-/** @type {number} */
 let totalLettersNumbers = 0;
 
-/** @type {Array.<string>} */
+/** @type {string[]} */
 const numberNames = [
   'zero',
   'one',
@@ -62,7 +59,7 @@ const numberNames = [
   'eighteen',
   'nineteen'];
 
-/** @type {Array.<string>} */
+/** @type {string[]} */
 const tensNumberNames = [
   'zero',
   'ten',

@@ -26,7 +26,6 @@
  * How many Lychrel numbers are there below ten-thousand?
  *
  * @see {@link https://projecteuler.net/problem=55}
- *
  * Solution: 249
  */
 'use strict';
@@ -62,9 +61,7 @@ function isLychrel(n, maxIteration) {
   return true;
 }
 
-/**
- * @return {BigInt}
- */
+/** @return {BigInt} */
 function searchLychrelNumbers() {
   let lychrels = 0n;
 

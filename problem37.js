@@ -51,9 +51,7 @@ function isLeftTruncatablePrime(n) {
   return isLeftTruncatablePrime(BigInt(n.toString().substr(1)));
 }
 
-/**
- * @return {Array}
- */
+/** @return {BigInt[]} */
 function searchTruncatablePrimes() {
   if (BigMath === undefined) throw Error('Requires bigmath.js');
 
@@ -63,9 +61,7 @@ function searchTruncatablePrimes() {
   const p = BigMath.primes;
 
   for (let i = 0; i < p.length; i++) {
-    if (isTruncatablePrime(p[i])) {
-      truncatablePrimes.push(p[i]);
-    }
+    if (isTruncatablePrime(p[i])) truncatablePrimes.push(p[i]);
   }
 
   return truncatablePrimes;

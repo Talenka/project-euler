@@ -36,7 +36,7 @@ function next(n) {
 
 /**
  * @param  {BigInt} n
- * @return {Array.<BigInt>}
+ * @return {BigInt[]}
  */
 function chain(n) {
   const result = [n];

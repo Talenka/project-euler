@@ -18,7 +18,6 @@
  * Find the sum of all 0 to 9 pandigital numbers with this property.
  *
  * @see {@link https://projecteuler.net/problem=43}
- *
  * Solution: 16695334890
  */
 'use strict';
@@ -38,9 +37,7 @@ function isPandigital(n) {
   return true;
 }
 
-/**
- * @return {BigInt} Sum of all 0-9 pandigital ints
- */
+/** @return {BigInt} Sum of all 0-9 pandigital ints */
 function problem43() {
   let sum = 0n;
 

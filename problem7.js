@@ -4,20 +4,14 @@
  * Strategy: brute force
  * @see https://projecteuler.net/problem=7
  * Result: 104743
- * Time: 905ms
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function nthPrime() {
-  /** @type {Array.<number>} */
+  /** @type {number[]} */
   const PrimesList = [2];
-
-  /** @type {number} */
   let PrimesNumber = 1;
-
   let n;
 
   for (n = 3; PrimesNumber < 10001; n += 2) {

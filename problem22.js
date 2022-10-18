@@ -17,7 +17,7 @@
  */
 'use strict';
 
-/** @type {Array.<string>} */
+/** @type {string[]} */
 let names = 'MARY PATRICIA LINDA BARBARA ELIZABETH JENNIFER MARIA SUSAN\
   MARGARET DOROTHY LISA NANCY KAREN BETTY HELEN SANDRA DONNA CAROL RUTH SHARON\
   MICHELLE LAURA SARAH KIMBERLY DEBORAH JESSICA SHIRLEY CYNTHIA ANGELA MELISSA\
@@ -504,10 +504,7 @@ let names = 'MARY PATRICIA LINDA BARBARA ELIZABETH JENNIFER MARIA SUSAN\
 
 names = names.sort();
 
-/** @type {number} */
-let score;
-
-/** @type {number} */
+let score = 0;
 let scoresSum = 0;
 
 for (let i = 0, j = names.length; i < j; i++) {

@@ -13,9 +13,7 @@
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function maxDiffPerimeters() {
   const max = 1000;
   const perimeters = [];

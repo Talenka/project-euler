@@ -25,13 +25,10 @@
  *
  * @see https://projecteuler.net/problem=6
  * Result: 25164150
- * Time: 14ms
  */
 'use strict';
 
-/**
- * @return {number}
- */
+/** @return {number} */
 function squaresSumDifference() {
   /** @type {number} */
   let difference = 0;

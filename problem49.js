@@ -12,7 +12,6 @@
  * sequence?
  *
  * @see {@link https://projecteuler.net/problem=49}
- *
  * Solution: {2597,5927,9257}
  */
 'use strict';
@@ -47,7 +46,7 @@ function permutDigits(n, a, b) {
 
 /**
  * @param {BigInt|number|string} n
- * @return {Array.<BigInt>}
+ * @return {BigInt[]}
  */
 function permutationsOf(n) {
   const l = n.toString().length;
@@ -62,9 +61,7 @@ function permutationsOf(n) {
   return p;
 }
 
-/**
- * @return {Array.<Array.<Bigint>>} List of permutative 4-digits primes.
- */
+/** @return {Array.<BigInt[]>} List of permutative 4-digits primes. */
 function searchPermutativePrimesTrio() {
   // We've load the first primes from bigmath.js and firstPrimes.js
   const p = BigMath.primes;
@@ -99,7 +96,7 @@ function searchPermutativePrimesTrio() {
     if (pp[i].length >= 3) {
       pp[i].sort();
 
-      // Given a sorted serie, we search 3 items that form aritmetic serie.
+      // Given a sorted serie, we search 3 items that form arithmetic serie.
       for (let a = 0, al = pp[i].length; a < al - 2; a++) {
         for (let b = a + 1; b < al - 1; b++) {
           for (let c = b + 1; c < al; c++) {

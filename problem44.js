@@ -11,10 +11,8 @@
  * difference are pentagonal and D = |Pk − Pj| is minimised; what is the value
  * of D?
  *
- * Strategy: brute force
  * @see https://projecteuler.net/problem=44
  * Result: 5482660
- * Time: 53s
  */
 'use strict';
 
