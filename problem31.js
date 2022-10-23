@@ -11,26 +11,37 @@
  */
 'use strict';
 
+const ways = {1: 1n};
+const coins = [1, 2, 5, 10, 20, 50, 100, 200];
+
 /**
  * @param {number} sum
  * @return {BigInt}
  */
 function differentWaysOfObtain(sum) {
-  const coins = [1, 2, 5, 10, 20, 50, 100, 200];
-  const ways = {1: 1n, 200: 1n};
+  if (typeof ways[sum] === 'bigint') return ways[sum];
+
+  console.log(ways);
 
   let result = 0n;
 
-  for (let i = 1; i <= sum / 2; i++) {
-    for (const c in coins) {
-      if (sum - coins[c] >= 0) {
-        ways[i] = ways[coins[c]] * ways[sum - coins[c]];
-        result += ways[i];
-      }
+  // eslint-disable-next-line guard-for-in
+  for (const c in coins) {
+    const remain = sum - coins[c];
+    console.log(coins[c], remain);
+    if (remain < 1) break;
+
+    if (typeof ways[remain] === 'bigint') {
+      result += ways[remain];
+      continue;
     }
+
+    const w = differentWaysOfObtain(remain);
+    result += w;
+    ways[remain] = w;
   }
 
   return result;
 }
 
-console.log(differentWaysOfObtain(200));
+console.log(differentWaysOfObtain(2));
