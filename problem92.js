@@ -57,7 +57,7 @@ function chain(n) {
 
 /**
  * @param  {BigInt} max
- * @return {Array}
+ * @return {Object.<string, number>}
  */
 function squareDigitChain89(max) {
   const result = {};
