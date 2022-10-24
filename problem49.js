@@ -12,53 +12,34 @@
  * sequence?
  *
  * @see {@link https://projecteuler.net/problem=49}
- * Solution: {2597,5927,9257}
+ * Solution: {2969, 6299, 9629}
  */
 'use strict';
-
-/**
- * @param {BigInt|number|string} n
- * @param {number} a origin digit index
- * @param {number} b digit index to swap with
- * @return {BigInt}
- */
-function permutDigits(n, a, b) {
-  if (typeof a !== 'number') throw new TypeError();
-  if (typeof b !== 'number') throw new TypeError();
-
-  const s = n.toString();
-
-  if (a < 0 || a >= s.length) throw new RangeError();
-  if (b < 0 || b >= s.length) throw new RangeError();
-
-  if (a === b) return n;
-
-  if (b < a) {
-    const c = a;
-    a = b;
-    b = c;
-  }
-
-  return BigInt(s.substr(0, a) + s[b] +
-                s.substr(a + 1, b - a - 1) + s[a] +
-                s.substr(b + 1));
-}
 
 /**
  * @param {BigInt|number|string} n
  * @return {BigInt[]}
  */
 function permutationsOf(n) {
-  const l = n.toString().length;
-  const p = [];
+  const s = n.toString();
+  const l = s.length;
+  if (l === 1) return [BigInt(n)];
+  if (l === 2) return [BigInt(n), BigInt(s.split('').reverse().join(''))];
 
-  for (let a = 0; a < l - 1; a++) {
-    for (let b = a + 1; b < l; b++) {
-      p.push(permutDigits(n, a, b));
+  const result = [];
+
+  for (let a = 0; a < l; a++) {
+    const i = s.substr(a, 1);
+    const p = permutationsOf(s.substr(0, a).concat(s.substr(a + 1)));
+
+    for (let b = 0, bl = p.length; b < bl; b++) {
+      result.push(BigInt(i.concat(p[b].toString())));
     }
   }
 
-  return p;
+  if (BigInt(result.length) !== BigMath.factorial(BigInt(l))) throw new Error();
+
+  return result;
 }
 
 /** @return {Array.<BigInt[]>} List of permutative 4-digits primes. */
@@ -70,8 +51,7 @@ function searchPermutativePrimesTrio() {
   const pp = {};
 
   // We bounds the search to 4-digits primes, hence the bounds ]1000; 9999[
-  const min = 1000n;
-  const max = 9999n;
+  const [min, max] = [1000n, 9999n];
 
   for (let i = 0, l = p.length; i < l; i++) {
     if (p[i] < min) continue;
@@ -80,12 +60,10 @@ function searchPermutativePrimesTrio() {
     const q = permutationsOf(p[i]).sort();
 
     const k = q[0];
-    if (pp[k] === undefined) pp[k] = [k];
+    if (pp[k] === undefined) pp[k] = [];
 
-    for (let j = 0, m = q.length; j < m && p[i] !== q[j] && q[j] > min; j++) {
-      if (p.indexOf(q[j]) !== -1) {
-        if (pp[k].indexOf(q[j]) === -1) pp[k].push(q[j]);
-      }
+    for (let j = 0, m = q.length; j < m && q[j] > min; j++) {
+      if (BigMath.isPrime(q[j]) && pp[k].indexOf(q[j]) === -1) pp[k].push(q[j]);
     }
   }
 
@@ -94,7 +72,7 @@ function searchPermutativePrimesTrio() {
 
   for (const i in pp) {
     if (pp[i].length >= 3) {
-      pp[i].sort();
+      pp[i] = pp[i].sort();
 
       // Given a sorted serie, we search 3 items that form arithmetic serie.
       for (let a = 0, al = pp[i].length; a < al - 2; a++) {

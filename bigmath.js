@@ -67,6 +67,22 @@ const BigMath = {
 
   /**
    * @param {BigInt} n
+   * @return {BigInt}
+   */
+  factorial: function(n) {
+    this.checkBigNat(n);
+
+    let f = 1n;
+
+    while (n > 1n) {
+      f *= n--;
+    }
+
+    return f;
+  },
+
+  /**
+   * @param {BigInt} n
    * @return {BigInt[]}
    * @todo
    * */
@@ -96,22 +112,6 @@ const BigMath = {
     if (this.isPrime(n)) factors.push(n);
 
     return factors;
-  },
-
-  /**
-   * @param {BigInt} n
-   * @return {BigInt}
-   */
-  factorial: function(n) {
-    this.checkBigNat(n);
-
-    let f = 1n;
-
-    while (n > 1n) {
-      f *= n--;
-    }
-
-    return f;
   },
 
   init: function() {
@@ -208,6 +208,29 @@ const BigMath = {
     }
 
     return powerOfTwo;
+  },
+
+  /**
+   * @param {BigInt|number|string} n
+   * @param {number} a origin digit index
+   * @param {number} b digit index to swap with
+   * @return {BigInt}
+   */
+  permutDigits: function(n, a, b) {
+    if (typeof a !== 'number') throw new TypeError();
+    if (typeof b !== 'number') throw new TypeError();
+
+    const s = n.toString();
+
+    if (a < 0 || a >= s.length) throw new RangeError();
+    if (b < 0 || b >= s.length) throw new RangeError();
+
+    if (a === b) return n;
+    if (b < a) [a, b] = [b, a];
+
+    return BigInt(s.substr(0, a) + s[b] +
+                  s.substr(a + 1, b - a - 1) + s[a] +
+                  s.substr(b + 1));
   },
 
   /**
