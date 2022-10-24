@@ -10,7 +10,7 @@ const BigMath = {
 
   /**
    * List of already found primes integers
-   * @see bigmath.js for a lot more
+   * @see firstPrimes.js for a lot more
    * @type {BigInt[]}
    */
   primes: [2n, 3n, 5n, 7n, 11n, 13n, 17n, 19n, 23n, 29n, 31n, 37n, 41n, 43n],
