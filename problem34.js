@@ -5,24 +5,23 @@
  * their digits.
  * Note: as 1! = 1 and 2! = 2 are not sums they are not included.
  *
- * Strategy: brute force
- * @see https://projecteuler.net/problem=34
- * Result: 40730
- * Time: 35ms
+ * @see {@link https://projecteuler.net/problem=34}
+ * Solution: 40730
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer} n!
  */
 function factorial(n) {
-  if (n < 2) return 1;
-  return n * factorial(n - 1);
+  let f = 1;
+  while (n > 1) f *= n--;
+  return f;
 }
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {boolean}
  */
 function isCuriousNumber(n) {
@@ -39,10 +38,6 @@ function isCuriousNumber(n) {
 
 let curiousSum = 0;
 
-for (let n = 10; n <= 50000; n++) {
-  if (isCuriousNumber(n)) curiousSum += n;
+for (let n = 10; n <= 50000; n++) if (isCuriousNumber(n)) curiousSum += n;
 
-  if (n % 100 === 0) {
-    console.log('Curiosity: ' + n + ' : ' + curiousSum);
-  }
-}
+console.log(curiousSum);

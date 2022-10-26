@@ -10,13 +10,13 @@
  * letters. The use of *and* when writing out numbers is in compliance with
  * British usage.
  *
- * @see https://projecteuler.net/problem=17
- * Result: 21124
+ * @see {@link https://projecteuler.net/problem=17}
+ * Solution: 21124
  */
 'use strict';
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {string}
  */
 function numberName(n) {
@@ -31,6 +31,7 @@ function numberName(n) {
     return tensNumberNames[Math.floor(n / 10)] +
            ((n % 10 === 0) ? '' : numberName(n % 10));
   }
+
   return numberNames[n];
 }
 
@@ -74,4 +75,4 @@ const tensNumberNames = [
 
 for (let i = 1; i <= 1000; i++) totalLettersNumbers += numberName(i).length;
 
-console.log('Letters number:', totalLettersNumbers);
+console.log(totalLettersNumbers);

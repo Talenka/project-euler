@@ -1,19 +1,18 @@
 /**
- * Double-base palindromes (problem #36)
- * =====================================
+ * Double-base palindromes
+ *
  * The decimal number 585 = 0b1001001001 (binary), is palindromic in both bases.
  * Find the sum of all numbers, less than one million, which are palindromic in
  * base 10 and base 2. (Please note that the palindromic number, in either base,
  * may not include leading zeros.)
  *
  * @see {@link https://projecteuler.net/problem=36}
- *
  * Solution: 872187
  */
 'use strict';
 
 /**
- * @param {string} s
+ * @param  {string} s
  * @return {boolean}
  */
 function isPalindrom(s) {
@@ -23,16 +22,14 @@ function isPalindrom(s) {
 }
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function doubleBasePalindromsBelow(n) {
   const result = [];
 
   for (let i = 0; i < n; i++) {
-    if (isPalindrom(i.toString()) && isPalindrom(i.toString(2))) {
-      result.push(i);
-    }
+    if (isPalindrom(i.toString()) && isPalindrom(i.toString(2))) result.push(i);
   }
 
   return result;

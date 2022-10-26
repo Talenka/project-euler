@@ -13,53 +13,30 @@
  * Find the sum of all the numbers that can be written as the sum of fifth
  * powers of their digits.
  *
- * Strategy: brute force
- * @see https://projecteuler.net/problem=30
- * Result: 443839
+ * @see {@link https://projecteuler.net/problem=30}
+ * Solution: 443839
  */
 'use strict';
 
 /**
- * @param {number[]} a
- * @return {number}
- */
-function arraySum(a) {
-  if (a.length === 0) return 0;
-  return a.reduce(function(sum, n) {
-    return sum + n;
-  });
-}
-
-/**
- * @param {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer}
  */
 function fifthPowerSumOfNumberDigits(n) {
   let sum = 0;
 
   while (n > 0) {
-    sum += fifthPower(n % 10);
-
+    sum += (n % 10) ** 5;
     n = Math.floor(n / 10);
   }
 
   return sum;
 }
 
-/**
- * @param {number} n
- * @return {number}
- */
-function fifthPower(n) {
-  return n ** 5;
-}
-
 const digitsFifthPowers = [];
 
 for (let n = 10; n < 200000; n++) {
-  if (n === fifthPowerSumOfNumberDigits(n)) {
-    digitsFifthPowers.push(n);
-  }
+  if (n === fifthPowerSumOfNumberDigits(n)) digitsFifthPowers.push(n);
 }
 
-console.log(arraySum(digitsFifthPowers));
+console.log(digitsFifthPowers.reduce((sum, n) => sum + n, 0));

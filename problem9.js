@@ -1,16 +1,14 @@
 /**
- * Return the product of an pythagorean triplet whose sum is 1000.
+ * Return the product of an Pythagorean triplet whose sum is 1000.
  *
- * A pythagorean triplet is a triplet of integers (a, b, c), 0 < a < b < c,
+ * A Pythagorean triplet is a triplet of integers (a, b, c), 0 < a < b < c,
  * which satisfy :
- *
  * [1]    a^2 + b^2 = c^2
  *
  * In fact this is a rectangle triangle whose sides dimensions are integers.
  *
- * Here we are looking for the product a * b * c of the special pythagorean
+ * Here we are looking for the product a * b * c of the special Pythagorean
  * triplet that satisfy :
- *
  * [2]    a + b + c = 1000
  *
  * Equation [2] is equivalent to c = 1000 - a - b, which can be introduced in
@@ -25,28 +23,19 @@
  *
  * Plus, we have sympathetic upper bounds: a < 500 and b < 500.
  *
- * @see https://projecteuler.net/problem=9
- * Result: 31875000 (a = 200; b = 375, c = 425)
- * Time: 15ms
+ * @see {@link https://projecteuler.net/problem=9}
+ * Solution: 31875000 (a = 200; b = 375, c = 425)
  */
 'use strict';
 
-/** @return {number} */
-function pythagoreanTripletProduct() {
-  let c = 0;
+let c = 0;
 
-  for (let a = 1; a < 500; a++) {
-    for (let b = a + 1; b < 500; b++) {
-      c = 1000 - a - b;
+for (let a = 1; a < 500; a++) {
+  for (let b = a + 1; b < 500; b++) {
+    c = 1000 - a - b;
 
-      if (a * a + b * b === c * c) {
-        if (console) console.log('The product: ' + a * b * c);
-        return a * b * c;
-      }
+    if (a * a + b * b === c * c) {
+      console.log('Product', a * b * c, 'a, b, c', a, b, c);
     }
   }
-
-  return 0;
 }
-
-pythagoreanTripletProduct();

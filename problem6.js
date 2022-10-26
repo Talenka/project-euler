@@ -2,7 +2,7 @@
  * Return the difference between the square of the sum of integers n < 100,
  * A(n), and the sum of squared integers, B(n).
  *
- * Strategy: litteral simplification
+ * Strategy: literal simplification:
  * A(n) = 1 + 4 + 9 + ... + n^2
  * B(n) = (1 + 2 + 3 + ... + n)^2
  *
@@ -18,27 +18,17 @@
  *          = B(n) + (n + 1)^2 + 2 * X * (n + 1)
  *          = B(n) + (n + 1)^3
  *
- * Hence:
- * D(n + 1) - D(n) = (n + 1)^3 - (n + 1)^2 = n * (n + 1)^2
+ * Hence: D(n + 1) - D(n) = (n + 1)^3 - (n + 1)^2 = n * (n + 1)^2
  *
  * Finally, all we have to do is to sum this formula over integers n < 100.
  *
- * @see https://projecteuler.net/problem=6
- * Result: 25164150
+ * @see {@link https://projecteuler.net/problem=6}
+ * Solution: 25164150
  */
 'use strict';
 
-/** @return {number} */
-function squaresSumDifference() {
-  /** @type {number} */
-  let difference = 0;
+let difference = 0;
 
-  for (let n = 1; n <= 100; n++) {
-    difference += (n - 1) * n * n;
-  }
+for (let n = 1; n <= 100; n++) difference += (n - 1) * n * n;
 
-  console.log(difference);
-  return difference;
-}
-
-console.log(squaresSumDifference());
+console.log(difference);

@@ -1,21 +1,18 @@
 /**
  * The following iterative sequence is defined for the set of positive integers:
- *
  * n --> n / 2        (if n is even)
  * n --> 3 * n + 1    (if n is odd)
  *
  * Which starting number i < 1000000, produces the longest chain?
  *
- * Strategy: brute force
- * Source : https://projecteuler.net/problem=14
- * Result: 837799 (525-long chain)
- * Time: 2.46s
+ * @see {@link https://projecteuler.net/problem=14}
+ * Solution: 837799 (525-long chain)
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer}
  */
 function chainLength(n) {
   chain = 1;
@@ -29,22 +26,13 @@ function chainLength(n) {
   return chain;
 }
 
-/** @type {number} */
 let longestChain = 1;
-
-/** @type {number} */
 let longestChainStart;
-
-/** @type {number} */
 let chain;
 
 for (let i = 1; i < 1000000; i++) {
   chain = chainLength(i);
-
-  if (chain > longestChain) {
-    longestChain = chain;
-    longestChainStart = i;
-  }
+  if (chain > longestChain) [longestChain, longestChainStart] = [chain, i];
 }
 
-console.log('Longest chain start', longestChainStart);
+console.log(longestChain, longestChainStart);

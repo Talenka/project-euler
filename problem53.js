@@ -1,6 +1,6 @@
 /**
- * Combinatoric selections (problem #53)
- * =====================================
+ * Combinatorics selections
+ *
  * There are exactly ten ways of selecting three from five, 12345:
  * 123, 124, 125, 134, 135, 145, 234, 235, 245, and 345
  *
@@ -13,26 +13,23 @@
  * are greater than one-million?
  *
  * @see {@link https://projecteuler.net/problem=53}
- *
  * Solution: 4075
  */
 'use strict';
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {BigInt} n!
  */
 function factorial(n) {
   let f = 1n;
-
   while (n > 1n) f *= n--;
-
   return f;
 }
 
 /**
- * @param {BigInt} n
- * @param {BigInt} threshold
+ * @param  {BigInt} n
+ * @param  {BigInt} threshold
  * @return {BigInt}
  */
 function combinatoricSelections(n, threshold) {

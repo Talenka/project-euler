@@ -1,16 +1,13 @@
 /**
- * What is the sum of the digits of the number 2^1000?
+ * What is the sum of the digits of the number 2**1000?
  *
- * Source : https://projecteuler.net/problem=16
- * Result: 1366
- * Time: 18ms
+ * @see {@link https://projecteuler.net/problem=16}
+ * Strategy: for fun, this a workaround to avoid using BigInt.
+ * Solution: 1366
  */
 'use strict';
 
-/** @type {number[]} */
 const digits = [1];
-
-/** @type {number} */
 let digitsSum = 0;
 
 /** @type {boolean} ind means increment next digits */
@@ -36,4 +33,4 @@ for (let i = 1; i <= 1000; i++) {
 
 for (let d = 0, dl = digits.length; d < dl; d++) digitsSum += digits[d];
 
-console.log('Digits sum', digitsSum);
+console.log(digitsSum);

@@ -5,12 +5,11 @@
  * How many such routes are there through a N * N grid, with N = 20?
  *
  * This is just the number of permutations with repetition.
- * (See https://fr.wikipedia.org/wiki/Permutation_avec_r%C3%A9p%C3%A9tition)
+ * @see {@link https://fr.wikipedia.org/wiki/Permutation_avec_répétition}
  *
- * Here this is just (2N)! / (N!)^2
- *
- * @see https://projecteuler.net/problem=15
- * Result: 137846528820
+ * Strategy: here this is just (2N)! / (N!)^2
+ * @see {@link https://projecteuler.net/problem=15}
+ * Solution: 137846528820
  */
 'use strict';
 
@@ -19,4 +18,4 @@ let routesNumber = 1;
 
 for (let i = 1; i <= N; i++) routesNumber *= (N + i) / i;
 
-console.log('Routes number', routesNumber);
+console.log(routesNumber);

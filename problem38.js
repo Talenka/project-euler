@@ -1,6 +1,6 @@
 /**
- * Pandigital multiples (problem #38)
- * ==================================
+ * Pandigital multiples
+ *
  * Take the number 192 and multiply it by each of 1, 2, and 3:
  * 192 × 1 = 192
  * 192 × 2 = 384
@@ -17,13 +17,12 @@
  * the concatenated product of an integer with (1,2, ... , n) where n > 1?
  *
  * @see {@link https://projecteuler.net/problem=38}
- *
  * Solution: 932718654
  */
 'use strict';
 
 /**
- * @param {number|string} n
+ * @param  {number|string} n
  * @return {boolean} Is n pandigital number ?
  */
 function isPandigital(n) {
@@ -37,7 +36,7 @@ function isPandigital(n) {
   return true;
 }
 
-/** @return {number} */
+/** @return {integer} */
 function searchConcatenedPandigitalProduct() {
   const max = 50000;
   let greatestCPP = 0;
@@ -47,9 +46,7 @@ function searchConcatenedPandigitalProduct() {
     for (let j = 1; j < 9; j++) {
       p = p.concat(i * j);
 
-      if (j > 1 && isPandigital(p)) {
-        if (p > greatestCPP) greatestCPP = p;
-      }
+      if (j > 1 && isPandigital(p) && p > greatestCPP) greatestCPP = p;
     }
   }
 

@@ -11,30 +11,28 @@
  * 5, 6, 7, 8 and 9?
  *
  * Strategy: reduction by sort
- * @see https://projecteuler.net/problem=24
- * Result: 2783915460
- * Time: 13ms
+ * @see {@link https://projecteuler.net/problem=24}
+ * Solution: 2783915460
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer} n!
  */
 function factorial(n) {
-  if (n < 2) return 1;
-  return n * factorial(n - 1);
+  let f = 1;
+  while (n > 1) f *= n--;
+  return f;
 }
 
 /**
- * @param {number[]} a
- * @param {number} n
- * @return {number[]}
+ * @param  {integer[]} a
+ * @param  {integer}   n
+ * @return {integer[]}
  */
 function deleteElement(a, n) {
-  return a.filter(function(i) {
-    return i !== n;
-  });
+  return a.filter((i) => i !== n);
 }
 
 let result = '';
@@ -47,11 +45,8 @@ while (elementsNumber > 0) {
   e = Math.floor(permutationIndex / factorial(elementsNumber - 1));
 
   result += elements[e];
-
   permutationIndex -= e * factorial(elementsNumber - 1);
-
   elements = deleteElement(elements, elements[e]);
-
   elementsNumber--;
 }
 

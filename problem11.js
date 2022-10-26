@@ -2,17 +2,12 @@
  * Return the largest product of 4 adjacent elements of a
  * 20x20 grid (horizontally, vertically, and diagonally).
  *
- * Strategy: brute force
- * @see https://projecteuler.net/problem=11
- * Result: 70600674
- * Time: 17ms
+ * @see {@link https://projecteuler.net/problem=11}
+ * Solution: 70600674
  */
 'use strict';
 
-/**
- * The Grid
- * @type {Array.<number[]>}
- */
+/** @type {Array.<integer[]>} The Grid */
 const G = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
@@ -35,10 +30,6 @@ const G = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]];
 
-/**
- * The maximal product
- * @type {number}
- */
 let M = 0;
 
 for (let i = 0; i < 20; i++) {
@@ -61,4 +52,4 @@ for (let i = 0; i < 20; i++) {
   }
 }
 
-console.log('Maximal product:', M);
+console.log('Maximal product', M);

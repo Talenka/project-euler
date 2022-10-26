@@ -2,9 +2,8 @@
  * Return the sum of prime numbers < 2000000
  * N = 600851475143.
  *
- * @see https://projecteuler.net/problem=10
- *
- * Result: 142913828922
+ * @see {@link https://projecteuler.net/problem=10}
+ * Solution: 142913828922
  */
 'use strict';
 
@@ -27,4 +26,4 @@ for (let i = 3; i < Max; i += 2) {
   }
 }
 
-if (console) console.log(PrimesSum);
+console.log(PrimesSum);

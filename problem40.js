@@ -1,6 +1,6 @@
 /**
  * Champernowne's constant
- * =======================
+ *
  * An irrational decimal fraction is created by concatenating the positive
  * integers: 0.12345678910(1)112131415161718192021...
  *
@@ -8,14 +8,14 @@
  * If d(n) represents the nth digit of the fractional part, find the value of:
  * d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
  *
- * Result:
- * @see https://projecteuler.net/problem=40
+ * @see {@link https://projecteuler.net/problem=40}
+ * Solution: 210
  */
 'use strict';
 
 /**
- * @param  {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer}
  */
 function d(n) {
   let s = '';

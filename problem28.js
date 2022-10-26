@@ -16,9 +16,8 @@
  * formed in the same way?
  *
  * Strategy: linearization
- * @see https://projecteuler.net/problem=28
- * Result: 669171001
- * Times: 18ms
+ * @see {@link https://projecteuler.net/problem=28}
+ * Solution: 669171001
  */
 'use strict';
 

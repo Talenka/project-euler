@@ -1,6 +1,6 @@
 /**
- * Coded triangle numbers (problem #42)
- * ====================================
+ * Coded triangle numbers
+ *
  * The n-th term of the sequence of triangle numbers is given by, tn = n(n+1)/2;
  * so the first ten triangle numbers are:
  * 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
@@ -10,9 +10,8 @@
  * If the word value is a triangle number then we shall call the word a triangle
  * word.
  *
- * Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
- * containing nearly two-thousand common English words, how many are triangle
- * words?
+ * Using p042_words.js, a 16K text file containing nearly two-thousand common
+ * English words, how many are triangle words?
  *
  * @see {@link https://projecteuler.net/problem=42}
  * Solution: 162
@@ -20,8 +19,8 @@
 'use strict';
 
 /**
- * @param {string} word
- * @return {number}
+ * @param  {string} word
+ * @return {integer}
  */
 function wordValue(word) {
   let result = 0;
@@ -31,7 +30,7 @@ function wordValue(word) {
   return result;
 }
 
-/** @return {number} */
+/** @return {integer} */
 function searchTriangleWords() {
   const triangles = [];
   let triangleWords = 0;

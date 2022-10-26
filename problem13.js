@@ -2,15 +2,13 @@
  * Work out the first ten digits of the sum of the following one-hundred
  * 50-digit numbers.
  *
- * @see https://projecteuler.net/problem=13
- * Result: 5.537376230.......e+51
+ * @see {@link https://projecteuler.net/problem=13}
+ * Solution: 5537376230390876637302048746832985971773659831892672
  */
 'use strict';
 
-/** type {BitInt} */
 let theSum = 0n;
 
-/** type {BigInt[]} */
 const theNumbers = [
   37107287533902102798797998220837590246510135740250n,
   46376937677490009712648124896970078050417018260538n,
@@ -115,4 +113,4 @@ const theNumbers = [
 
 for (let i = 0, n = theNumbers.length; i < n; i++) theSum += theNumbers[i];
 
-console.log('The sum:', theSum);
+console.log(theSum);

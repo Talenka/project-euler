@@ -1,42 +1,34 @@
 /**
  * Find the sum of the digits in the number 100!
  *
- * Strategy: none ;-)
- * @see https://projecteuler.net/problem=20
- * Result: 648 (100! = 933262154439441526816992388562667004907159682643816214685
- *                     929638952175999932299156089414639761565182862536979208272
- *                     23758251185210916864)
+ * @see {@link https://projecteuler.net/problem=20}
+ * Solution: 648
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {BigInt} n
+ * @return {BigInt} n!
  */
 function factorial(n) {
-  let f = 1;
-
-  while (n > 1) {
-    f *= n;
-    n--;
-  }
-
+  let f = 1n;
+  while (n > 1n) f *= n--;
   return f;
 }
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {BigInt} n
+ * @return {BigInt}
  */
-function sumOfDigits(n) {
-  let s = 0;
+function digitSum(n) {
+  let s = 0n;
 
-  while (n > 1) {
-    s += n % 10;
-    n = Math.floor(n / 10);
+  while (n > 1n) {
+    s += n % 10n;
+    n = n / 10n;
   }
 
   return s;
 }
 
-console.log(sumOfDigits(factorial(100)));
+console.log(digitSum(factorial(100n)));

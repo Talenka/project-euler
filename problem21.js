@@ -9,14 +9,14 @@
  *
  * Evaluate the sum of all the amicable numbers under 10000.
  *
- * @see https://projecteuler.net/problem=21
- * Result: 31626
+ * @see {@link https://projecteuler.net/problem=21}
+ * Solution: 31626
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer}
  */
 function divisorsSum(n) {
   let sum = 1;
@@ -45,4 +45,4 @@ for (let i = 2, j = divisorsSums.length; i < j; i++) {
   }
 }
 
-console.log('Amicable numbers sum', amicableNumbersSum);
+console.log(amicableNumbersSum);

@@ -1,9 +1,9 @@
 /**
- * Digit cancelling fractions (problem #33)
- * ========================================
+ * Digit cancelling fractions
+ *
  * The fraction 49/98 is a curious fraction, as an inexperienced mathematician
  * in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which
- * is correct, is obtained by cancelling the 9s.
+ * is correct, is obtained by cancelling the nines.
  *
  * We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
  *
@@ -21,12 +21,12 @@
  */
 'use strict';
 
-/** @return {number[]} */
+/** @return {integer[]} */
 function searchCuriousFractions() {
   const curiousNumerators = [];
   const curiousDenominators = [];
 
-  // Bounds a to [10; 98] to have 2 digits at numerator...
+  // Bounds a to [12; 98] to have 2 digits at numerator...
   for (let a = 12; a <= 98; a++) {
     // Skips trivials 11/xx, 22/xx...
     if (a % 11 === 0) continue;
@@ -46,7 +46,7 @@ function searchCuriousFractions() {
   const numeratorsProd = curiousNumerators.reduce((p, i) => p * i, 1);
   const denominatorsProd = curiousDenominators.reduce((p, i) => p * i, 1);
 
-  return [numeratorsProd, denominatorsProd];
+  return denominatorsProd / numeratorsProd;
 }
 
 console.log(searchCuriousFractions());

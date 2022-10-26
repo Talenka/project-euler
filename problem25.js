@@ -1,27 +1,22 @@
 /**
  * The Fibonacci sequence is defined by the recurrence relation:
- * Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1.
+ * F(n) = F(n−1) + F(n−2), where F(1) = 1 and F(2) = 1.
  *
- * The 12th term, F12 = 144, is the first term to contain three digits.
+ * The 12th term, F(12) = 144, is the first term to contain three digits.
  * What is the first term in the Fibonacci sequence to contain 1000 digits?
  *
- * Strategy: brute force
- * @see https://projecteuler.net/problem=25
- * Result: 4782th
+ * @see {@link https://projecteuler.net/problem=25}
+ * Solution: 4782th
  */
 'use strict';
 
 /**
- * @param {number[]} a
- * @param {number[]} b
- * @return {number[]}
+ * @param  {integer[]} a
+ * @param  {integer[]} b
+ * @return {integer[]}
  */
 function digitsArraySum(a, b) {
-  if (a.length < b.length) {
-    const c = a;
-    a = b;
-    b = c;
-  }
+  if (a.length < b.length) [a, b] = [b, a];
 
   while (a.length > b.length) b.push(0);
 
@@ -38,9 +33,7 @@ function digitsArraySum(a, b) {
 
       sum[i] = d;
 
-      if (i == j - 1) {
-        sum[i + 1] = 1;
-      }
+      if (i === j - 1) sum[i + 1] = 1;
     } else {
       sum[i] = d;
       ind = 0;
@@ -63,4 +56,4 @@ while (Fn.length < maxDigitsNumber) {
   index++;
 }
 
-console.log('First Fibonacci:', index);
+console.log('First Fibonacci with', maxDigitsNumber, 'digits:', index);

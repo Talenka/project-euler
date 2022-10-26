@@ -1,6 +1,6 @@
 /**
- * Self powers (problem #48)
- * =========================
+ * Self powers
+ *
  * The series, 1**1 + 2**2 + 3**3 + ... + 10**10 = 10405071317.
  *
  * Find the last ten digits of the series, 1**1 + 2**2 + ... + 1000**1000.
@@ -11,7 +11,7 @@
 'use strict';
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {BigInt}
  */
 function selfPowerLastDigits(n) {

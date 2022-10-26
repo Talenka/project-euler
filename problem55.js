@@ -1,6 +1,6 @@
 /**
- * Lychrel numbers (problem #55)
- * =============================
+ * Lychrel numbers
+ *
  * If we take 47, reverse and add, 47 + 74 = 121, which is palindromic.
  * Not all numbers produce palindromes so quickly. For example,
  * 349 + 943 = 1292,
@@ -31,7 +31,7 @@
 'use strict';
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {BigInt}
  */
 function reverse(n) {
@@ -39,7 +39,7 @@ function reverse(n) {
 }
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {boolean}
  */
 function isPalindrom(n) {
@@ -47,8 +47,8 @@ function isPalindrom(n) {
 }
 
 /**
- * @param {BigInt} n
- * @param {BigInt} maxIteration
+ * @param  {BigInt} n
+ * @param  {BigInt} maxIteration
  * @return {boolean}
  */
 function isLychrel(n, maxIteration) {

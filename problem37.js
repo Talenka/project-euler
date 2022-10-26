@@ -1,6 +1,6 @@
 /**
- * Truncatable primes (problem #37)
- * ================================
+ * Truncatable primes
+ *
  * The number 3797 has an interesting property. Being prime itself, it is
  * possible to continuously remove digits from left to right, and remain prime
  * at each stage: 3797, 797, 97, and 7. Similarly we can work from right to
@@ -10,13 +10,12 @@
  * right and right to left.
  *
  * @see {@link https://projecteuler.net/problem=37}
- *
- * Solution: 748317
+ * Solution: 748317 (take 40s)
  */
 'use strict';
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {boolean}
  */
 function isTruncatablePrime(n) {
@@ -32,7 +31,7 @@ function isTruncatablePrime(n) {
 }
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {boolean}
  */
 function isRightTruncatablePrime(n) {
@@ -42,7 +41,7 @@ function isRightTruncatablePrime(n) {
 }
 
 /**
- * @param {BigInt} n
+ * @param  {BigInt} n
  * @return {boolean}
  */
 function isLeftTruncatablePrime(n) {

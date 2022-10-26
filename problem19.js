@@ -14,16 +14,15 @@
  * How many Sundays fell on the first of the month during the twentieth
  * century (1 Jan 1901 to 31 Dec 2000)?
  *
- * Source : https://projecteuler.net/problem=19
- * Result : 171
- * Time: 19ms
+ * @see {@link https://projecteuler.net/problem=19}
+ * Solution: 171
  */
 'use strict';
 
 /**
- * @param {number} m
- * @param {number} y
- * @return {number}
+ * @param  {integer} m
+ * @param  {integer} y
+ * @return {integer}
  */
 function monthLength(m, y) {
   if (m === 2) return isLeapYear(y) ? 29 : 28;
@@ -32,11 +31,11 @@ function monthLength(m, y) {
 }
 
 /**
- * @param {number} y
+ * @param  {integer} y
  * @return {boolean}
  */
 function isLeapYear(y) {
-  return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? true : false;
+  return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0));
 }
 
 let current = [1900, 1, 1];
