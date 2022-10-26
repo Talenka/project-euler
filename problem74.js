@@ -1,6 +1,6 @@
 /**
- * Digit factorial chains (problem #74)
- * ====================================
+ * Digit factorial chains
+ *
  * The number 145 is well known for the property that the sum of the factorial
  * of its digits is equal to 145:
  * 1! + 4! + 5! = 1 + 24 + 120 = 145
@@ -24,11 +24,9 @@
  * exactly sixty non-repeating terms?
  *
  * @see {@link https://projecteuler.net/problem=74}
- * Solution:
+ * Solution: 402
  */
 'use strict';
-
-const knownChains = {145: [145]};
 
 /**
  * @param  {integer} n
@@ -40,20 +38,35 @@ function factorial(n) {
   return f;
 }
 
-/** @param  {integer} n */
+/**
+ * @param  {integer}   n
+ * @return {integer[]}
+ */
+function digits(n) {
+  if (n < 0) n *= -1;
+  const d = [];
+  while (n > 1) {
+    d.push(Math.floor(n % 10));
+    n /= 10;
+  }
+  return d.reverse();
+}
+
+/**
+ * @param  {integer} n
+ * @return {integer} chain length
+ */
 function digitFactorialChain(n) {
   const chain = [n];
 
-  while (!(knownChains[n] instanceof Array)) {
-    const digits = n.toString().split('').map((x) => Number.parseInt(x));
-    n = digits.reduce((sum, x) => sum + factorial(x), 0);
-    if (chain.indexOf(n) === -1) chain.push(n);
-    else {
-      knownChains[chain[0]] = chain;
-    }
-    console.log(chain);
-    if (chain.length > 6) break;
+  while (true) {
+    const d = digits(n);
+    n = d.reduce((sum, x) => sum + factorial(x), 0);
+    if (chain.includes(n)) return chain.length;
+    chain.push(n);
   }
+
+  return null;
 }
 
 /**
@@ -61,9 +74,9 @@ function digitFactorialChain(n) {
  * @return {Object.<number, integer[]>}
  */
 function digitFactorialChains(max) {
-  for (let n = 2; n <= max; n++) digitFactorialChain(n);
-
-  return knownChains;
+  let count = 0;
+  for (let n = 2; n <= max; n++) if (digitFactorialChain(n) === 60) count++;
+  return count;
 }
 
-console.log(digitFactorialChains(5));
+console.log(digitFactorialChains(1000000));
