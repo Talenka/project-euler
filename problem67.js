@@ -22,14 +22,13 @@
  * There is an efficient algorithm to solve it. ;o)
  *
  * @see {@link https://projecteuler.net/problem=67}
- *
  * Solution: 7273
  */
 'use strict';
 
 /**
- * @param {Array.<number[]>} triangle
- * @return {number[]}
+ * @param {Array.<integer[]>} triangle
+ * @return {integer[]}
  */
 function maximumPathSum2(triangle) {
   // The trick is to start at the bottom of the triangle...

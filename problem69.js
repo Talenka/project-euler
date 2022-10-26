@@ -24,7 +24,7 @@
  *
  * @see {@link https://projecteuler.net/problem=69}
  *
- * Solution: 510510
+ * Solution: 510510 (@todo takes a long time, about an hour)
  */
 'use strict';
 
