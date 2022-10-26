@@ -71,7 +71,7 @@ function digitFactorialChain(n) {
 
 /**
  * @param  {integer} max
- * @return {Object.<number, integer[]>}
+ * @return {Object.<integer, integer[]>}
  */
 function digitFactorialChains(max) {
   let count = 0;

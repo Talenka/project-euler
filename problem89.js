@@ -1,6 +1,6 @@
 /**
- * Roman numerals (problem #89)
- * ============================
+ * Roman numerals
+ *
  * For a number written in Roman numerals to be considered valid there are basic
  * rules which must be followed. Even though the rules allow some numbers to be
  * expressed in more than one way there is always a "best" way of writing a
@@ -33,11 +33,11 @@
 'use strict';
 
 /**
- * @param  {string} litteral
- * @return {number}
+ * @param  {string} literal
+ * @return {integer}
  */
-function romanToDecimal(litteral) {
-  const expansion = litteral.replace('IV', 'IIII')
+function romanToDecimal(literal) {
+  const expansion = literal.replace('IV', 'IIII')
       .replace('IX', 'IIIIIIIII')
       .replace('XL', 'XXXX')
       .replace('XC', 'XXXXXXXXX')
@@ -55,7 +55,7 @@ function romanToDecimal(litteral) {
 }
 
 /**
- * @param  {number} n
+ * @param  {integer} n
  * @return {string}
  */
 function decimalToRoman(n) {
@@ -130,10 +130,10 @@ function decimalToRoman(n) {
 }
 
 /**
- * @param  {string[]} litterals
- * @return {number}
+ * @param  {string[]} literals
+ * @return {integer}
  */
-function shrinkRomans(litterals) {
+function shrinkRomans(literals) {
   let gain = 0;
 
   for (let i = 0, l = litterals.length; i < l; i++) {

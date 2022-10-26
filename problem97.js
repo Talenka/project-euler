@@ -1,6 +1,6 @@
 /**
- * Square digit chains (problem #97)
- * =================================
+ * Square digit chains
+ *
  * The first known prime found to exceed one million digits was discovered in
  * 1999, and is a Mersenne prime of the form 2**6972593−1; it contains exactly
  * 2098960 digits. Subsequently other Mersenne primes, of the form 2**p−1, have
@@ -12,7 +12,6 @@
  * Find the last ten digits of this prime number.
  *
  * @see {@link https://projecteuler.net/problem=97}
- *
  * Solution: 8739992577
  */
 'use strict';
@@ -21,7 +20,7 @@
  * @param  {BigInt} n
  * @param  {BigInt} power
  * @param  {BigInt} modulus
- * @return {BigInt} n**power (mod modules)
+ * @return {BigInt} n**power (mod modulus)
  */
 function powMod(n, power, modulus) {
   let r = n % modulus;

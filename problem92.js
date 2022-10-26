@@ -1,6 +1,6 @@
 /**
- * Square digit chains (problem #92)
- * =================================
+ * Square digit chains
+ *
  * A number chain is created by continuously adding the square of the digits in
  * a number to form a new number until it has been seen before. For example,
  * 44 → 32 → 13 → 10 → 1 → 1
@@ -13,7 +13,6 @@
  * How many starting numbers below ten million will arrive at 89?
  *
  * @see {@link https://projecteuler.net/problem=92}
- *
  * Solution: 8581146
  * 1 is idempotent (chain(1)=1), and all other fall into the 89 cycle.
  */
@@ -57,7 +56,7 @@ function chain(n) {
 
 /**
  * @param  {BigInt} max
- * @return {Object.<string, number>}
+ * @return {Object.<string, integer>}
  */
 function squareDigitChain89(max) {
   const result = {};

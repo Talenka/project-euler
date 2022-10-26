@@ -1,6 +1,6 @@
 /**
- * Pass-code derivation (problem #79)
- * ==================================
+ * Pass-code derivation
+ *
  * A common security method used for online banking is to ask the user for three
  * random characters from a pass-code.
  *
@@ -17,7 +17,7 @@
  */
 'use strict';
 
-/** @return {{exists: Array, precedes: Array}} */
+/** @return {{exists: integer[], precedes: integer[]}} */
 function understandKeylog() {
   const keylog = [319, 680, 180, 690, 129, 620, 762, 689, 762, 318, 368, 710,
     720, 710, 629, 168, 160, 689, 716, 731, 736, 729, 316, 729, 729, 710, 769,
@@ -49,7 +49,7 @@ function understandKeylog() {
 
 /**
  * @param  {string} passcode
- * @param  {{exists: Array, precedes: Array}} conditions
+ * @param  {{exists: integer[], precedes: integer[]}} conditions
  * @return {boolean}
  */
 function testPasscode(passcode, conditions) {
