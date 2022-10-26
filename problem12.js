@@ -7,10 +7,20 @@
  * We are looking for the smallest triangular number that have over five hundred
  * divisors.
  *
- * Source : https://projecteuler.net/problem=12
- * Result: 76576500 (12376th triangular number)
+ * @see {@link https://projecteuler.net/problem=12}
+ * Solution: 76576500 (12376th triangular number)
  */
 'use strict';
+
+/**
+ * @param  {integer} n
+ * @return {integer}
+ */
+function factorize(n) {
+  let factors = 2;
+  for (let i = 2, m = n / 2; i <= m; i++) if (n % i === 0) factors++;
+  return factors;
+}
 
 let n = 1;
 let triangularNumber = 1;
@@ -25,18 +35,3 @@ while (factorsNumber < 500) {
 }
 
 console.log('500 factors triangular number', triangularNumber);
-
-/**
- * @param {number} n
- * @return {number}
- */
-function factorize(n) {
-  /** @type {number} */
-  let factors = 2;
-
-  for (let i = 2; i <= n / 2; i++) {
-    if (n % i === 0) factors++;
-  }
-
-  return factors;
-}

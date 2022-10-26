@@ -20,24 +20,22 @@
  * of two abundant numbers.
  *
  * Strategy: brute force
- * @see https://projecteuler.net/problem=23
- * Result: 4179871
- * Time: 247s
+ * @see {@link https://projecteuler.net/problem=23}
+ * Solution: 4179871
+ * @todo Time: 247s, we can do better
  */
 'use strict';
 
 /**
- * @param {number[]} a
- * @return {number}
+ * @param  {integer[]} a
+ * @return {integer}
  */
 function arraySum(a) {
-  return a.reduce(function(sum, n) {
-    return sum + n;
-  });
+  return a.reduce((sum, n) => sum + n);
 }
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {boolean}
  */
 function isAbundant(n) {
@@ -45,8 +43,8 @@ function isAbundant(n) {
 }
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function divisorsList(n) {
   const divisors = [1];
@@ -59,8 +57,8 @@ function divisorsList(n) {
 }
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function abundantNumbersSmallerThan(n) {
   const abundantNumbers = [];
@@ -71,16 +69,16 @@ function abundantNumbersSmallerThan(n) {
 }
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {boolean}
  */
 function isSumOfTwoAbundantNumbers(n) {
-  return (abundantSums.indexOf(n) !== -1);
+  return abundantSums.includes(n);
 }
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function abundantSumSmallerThan(n) {
   const sums = [];

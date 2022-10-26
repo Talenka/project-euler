@@ -13,16 +13,15 @@
  * Find the first four consecutive integers to have four distinct prime factors.
  * What is the first of these numbers?
  *
- * Strategy: brute force
- * @see https://projecteuler.net/problem=47
- * Result: 134043
+ * @see {@link https://projecteuler.net/problem=47}
+ * Solution: 134043
  * Time: 560ms
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function primesSmallerThan(n) {
   const Primes = [2];
@@ -41,8 +40,8 @@ function primesSmallerThan(n) {
 const Primes = primesSmallerThan(1000);
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function distinctPrimesFactorsList(n) {
   const factors = [];

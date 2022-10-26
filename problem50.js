@@ -1,6 +1,6 @@
 /**
- * Consecutive prime sum (problem #50)
- * ===================================
+ * Consecutive prime sum
+ *
  * The prime 41, can be written as the sum of six consecutive primes:
  * 41 = 2 + 3 + 5 + 7 + 11 + 13
  *
@@ -17,8 +17,8 @@
 'use strict';
 
 /**
- * @param {BigInt} n
- * @return {{maxSum: BigInt, maxLength: number}}
+ * @param  {BigInt} n
+ * @return {{maxSum: BigInt, maxLength: integer}}
  */
 function mostConsecutivePrimesSumUnder(n) {
   const p = BigMath.primes;

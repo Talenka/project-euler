@@ -17,8 +17,8 @@
 'use strict';
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  * @todo debug
  */
 function primesSmallerThan(n) {
@@ -38,7 +38,7 @@ function primesSmallerThan(n) {
 const Primes = primesSmallerThan(1000000);
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {boolean}
  */
 function isPrime(n) {
@@ -46,8 +46,8 @@ function isPrime(n) {
 }
 
 /**
- * @param {number} n
- * @return {number}
+ * @param  {integer} n
+ * @return {integer}
  */
 function circularPermutation(n) {
   if (n < 10) return n;
@@ -58,7 +58,7 @@ function circularPermutation(n) {
 }
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {boolean}
  */
 function isCircularPrimes(n) {

@@ -18,24 +18,22 @@
  * starting with n = 0.
  *
  * Strategy: brute force
- * @see https://projecteuler.net/problem=27
- * Result: -59231 (consecutive primes = 71; a = -61; b=971)
- * Time: 200s
+ * @see {@link https://projecteuler.net/problem=27}
+ * Solution: -59231 (consecutive primes = 71; a = -61; b=971)
+ * Time: 200s!
  */
 'use strict';
 
 /**
- * @param {number} n
- * @return {number[]}
+ * @param  {integer} n
+ * @return {integer[]}
  */
 function primesSmallerThan(n) {
   const Primes = [2];
 
-  for (let i = 3; i < n; i += 2) {
-    for (let j = 0, k = Primes.length; j < k; j++) {
-      if (i % Primes[j] === 0) break;
-    }
-
+  for (let i = 3, k = Primes.length; i < n; i += 2) {
+    let j = 0;
+    for (; j < k; j++) if (i % Primes[j] === 0) break;
     if (j === k) Primes.push(i);
   }
 
@@ -45,17 +43,17 @@ function primesSmallerThan(n) {
 const Primes = primesSmallerThan(400000);
 
 /**
- * @param {number} n
+ * @param  {integer} n
  * @return {boolean}
  */
 function isPrime(n) {
-  return Primes.indexOf(n) !== -1;
+  return Primes.includes(n);
 }
 
 /**
- * @param {number} a
- * @param {number} b
- * @return {number}
+ * @param  {integer} a
+ * @param  {integer} b
+ * @return {integer}
  */
 function quadradicFormulaConsecutivePrimes(a, b) {
   let n = 0;
@@ -77,8 +75,6 @@ let maxB;
 const span = 1000;
 
 for (let a = -span; a <= span; a++) {
-  console.log(a + ' : ' + maxConsecutivePrimes);
-
   for (let b = -span; b <= span; b++) {
     currentConsecutivePrimes = quadradicFormulaConsecutivePrimes(a, b);
 

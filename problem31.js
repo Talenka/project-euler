@@ -1,5 +1,6 @@
 /**
  * Coin sums
+ *
  * In the United Kingdom the currency is made up of pound (£) and pence (p).
  * There are eight coins in general circulation:
  * 1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p).
@@ -8,14 +9,17 @@
  * 1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
  *
  * How many different ways can £2 be made using any number of coins?
+ *
+ * @see {@link https://projecteuler.net/problem=31}
+ * Solution:
  */
 'use strict';
 
-const ways = {1: 1n};
+const ways = {1: 1n, 2: 2n, 3: 3n, 4: 3n};
 const coins = [1, 2, 5, 10, 20, 50, 100, 200];
 
 /**
- * @param {number} sum
+ * @param  {integer} sum
  * @return {BigInt}
  */
 function differentWaysOfObtain(sum) {

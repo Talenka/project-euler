@@ -234,6 +234,22 @@ const BigMath = {
   },
 
   /**
+   * @param  {BigInt}   n
+   * @return {BigInt[]}
+   */
+  primesUnder: function(n) {
+    this.checkBigNat(n);
+
+    if (this.primes[this.primes.length - 1] < n) this.countPrimesUnder(n);
+
+    const result = [];
+
+    for (let i = 0; this.primes[i] <= n; i++) result.push(this.primes[i]);
+
+    return result;
+  },
+
+  /**
    * @todo test
    * @param {BigInt} a
    * @param {BigInt} b

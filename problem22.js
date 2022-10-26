@@ -11,9 +11,8 @@
  *
  * What is the total of all the name scores in the file?
  *
- * @see https://projecteuler.net/problem=22
- * Result: 871198282
- * Time: 15ms
+ * @see {@link https://projecteuler.net/problem=22}
+ * Solution: 871198282
  */
 'use strict';
 
@@ -517,4 +516,4 @@ for (let i = 0, j = names.length; i < j; i++) {
   scoresSum += score * (i + 1);
 }
 
-console.log('Scores sum', scoresSum);
+console.log(scoresSum);

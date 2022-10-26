@@ -31,8 +31,8 @@
 const knownChains = {145: [145]};
 
 /**
- * @param  {number} n
- * @return {number} n!
+ * @param  {integer} n
+ * @return {integer} n!
  */
 function factorial(n) {
   let f = 1;
@@ -40,7 +40,7 @@ function factorial(n) {
   return f;
 }
 
-/** @param  {number} n */
+/** @param  {integer} n */
 function digitFactorialChain(n) {
   const chain = [n];
 
@@ -57,14 +57,13 @@ function digitFactorialChain(n) {
 }
 
 /**
- * @param  {number} max
- * @return {Object.<number, number[]>}
+ * @param  {integer} max
+ * @return {Object.<number, integer[]>}
  */
 function digitFactorialChains(max) {
   for (let n = 2; n <= max; n++) digitFactorialChain(n);
 
   return knownChains;
 }
-
 
 console.log(digitFactorialChains(5));
