@@ -39,8 +39,8 @@ const BigMath = {
   },
 
   /**
-   * @param {BigInt} n
-   * @return {number}
+   * @param  {BigInt} n
+   * @return {integer}
    */
   countPrimesUnder: function(n) {
     this.checkBigNat(n);
@@ -58,7 +58,7 @@ const BigMath = {
 
   /**
    * Try to convert n to a BigInt
-   * @param {number|string|BitInt} n
+   * @param  {number|string|BitInt} n
    * @return {BigInt}
    */
   big: function(n) {
@@ -66,7 +66,7 @@ const BigMath = {
   },
 
   /**
-   * @param {BigInt} n
+   * @param  {BigInt} n
    * @return {BigInt}
    */
   factorial: function(n) {
@@ -82,7 +82,7 @@ const BigMath = {
   },
 
   /**
-   * @param {BigInt} n
+   * @param  {BigInt} n
    * @return {BigInt[]}
    * @todo
    * */
@@ -123,8 +123,8 @@ const BigMath = {
    * @see https://en.wikipedia.org/wiki/Greatest_common_divisor
    * Section #Using_Euclid.27s_algorithm
    *
-   * @param {BigInt} a
-   * @param {BigInt} b
+   * @param  {BigInt} a
+   * @param  {BigInt} b
    * @return {BigInt}
    */
   gcd: function greatestCommonDivisor(a, b) {
@@ -141,7 +141,7 @@ const BigMath = {
   },
 
   /**
-   * @param {BigInt} n
+   * @param  {BigInt} n
    * @return {boolean}
    */
   isPrime: function(n) {
@@ -183,16 +183,18 @@ const BigMath = {
    * @see https://en.wikipedia.org/wiki/Least_common_multiple
    * Section #Reduction_by_the_greatest_common_divisor
    *
-   * @param {BigInt} a
-   * @param {BigInt} b
+   * @param  {BigInt} a
+   * @param  {BigInt} b
    * @return {BigInt}
    */
   lcm: function leastCommonMultiple(a, b) {
+    a = this.unsign(a);
+    b = this.unsign(b);
     return a * b / this.gcd(a, b);
   },
 
   /**
-   * @param {BigInt} n
+   * @param  {BigInt} n
    * @return {BigInt}
    */
   log2: function logarithmBaseTwo(n) {
@@ -211,9 +213,9 @@ const BigMath = {
   },
 
   /**
-   * @param {BigInt|number|string} n
-   * @param {number} a origin digit index
-   * @param {number} b digit index to swap with
+   * @param  {BigInt|number|string} n
+   * @param  {integer} a origin digit index
+   * @param  {integer} b digit index to swap with
    * @return {BigInt}
    */
   permutDigits: function(n, a, b) {
@@ -251,8 +253,8 @@ const BigMath = {
 
   /**
    * @todo test
-   * @param {BigInt} a
-   * @param {BigInt} b
+   * @param  {BigInt} a
+   * @param  {BigInt} b
    * @return {BigInt[]} numerator and denominator of simplified function
    */
   reduceFraction: function(a, b) {
@@ -267,9 +269,9 @@ const BigMath = {
 
   /**
    * Based on Waldemar Horwat's work (MIT license),
-   * @see {@link https://github.com/waldemarhorwat/integer-roots/}
-   * @todo clarify
-   * @param {BigInt} n
+   * @see    {@link https://github.com/waldemarhorwat/integer-roots/}
+   * @todo   Clarify
+   * @param  {BigInt} n
    * @return {BigInt}
    */
   sqrt: function squareRootOf(n) {
@@ -289,16 +291,12 @@ const BigMath = {
   },
 
   /**
-   * @param {BigInt} n
+   * @param  {BigInt} n
    * @return {BigInt}
    */
   unsign: function(n) {
     if (typeof n !== 'bigint') throw new TypeError('bigint parameter required');
-
-    if (n < 0n) {
-      n *= -1n;
-    }
-
+    if (n < 0n) n *= -1n;
     return n;
   },
 
