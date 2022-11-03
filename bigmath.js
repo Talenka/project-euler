@@ -128,14 +128,7 @@ const BigMath = {
    * @return {BigInt}
    */
   gcd: function greatestCommonDivisor(a, b) {
-    let c;
-
-    if (b > a) {
-      c = b;
-      b = a;
-      a = c;
-    }
-
+    if (b > a) [a, b] = [b, a];
     if (a % b === 0n) return b;
     return this.gcd(b, a % b);
   },
