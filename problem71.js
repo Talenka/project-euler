@@ -16,7 +16,7 @@
  * 3/7.
  *
  * @see {@link https://projecteuler.net/problem=71}
- * Solution:
+ * Solution: 428570
  */
 'use strict';
 
