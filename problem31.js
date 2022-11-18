@@ -11,41 +11,26 @@
  * How many different ways can £2 be made using any number of coins?
  *
  * @see {@link https://projecteuler.net/problem=31}
- * Solution:
+ * Solution: 73682
  */
 'use strict';
 
-const ways = {1: 1n, 2: 2n, 3: 3n, 4: 3n};
 const coins = [1, 2, 5, 10, 20, 50, 100, 200];
 
 /**
  * @param  {integer} sum
- * @return {BigInt}
+ * @return {integer}
  */
-function differentWaysOfObtain(sum) {
-  if (typeof ways[sum] === 'bigint') return ways[sum];
+function differentWaysToGet(sum) {
+  if (sum < 0) return 0;
+  const ways = new Uint32Array(sum + 1); // Zero-filled
+  ways[0] = 1;
 
-  console.log(ways);
-
-  let result = 0n;
-
-  // eslint-disable-next-line guard-for-in
-  for (const c in coins) {
-    const remain = sum - coins[c];
-    console.log(coins[c], remain);
-    if (remain < 1) break;
-
-    if (typeof ways[remain] === 'bigint') {
-      result += ways[remain];
-      continue;
-    }
-
-    const w = differentWaysOfObtain(remain);
-    result += w;
-    ways[remain] = w;
+  for (let i = 0; i < coins.length; i++) {
+    for (let j = coins[i]; j <= sum; j++) ways[j] += ways[j - coins[i]];
   }
 
-  return result;
+  return ways[sum];
 }
 
-console.log(differentWaysOfObtain(2));
+console.log(differentWaysToGet(200));
